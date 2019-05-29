@@ -18,9 +18,9 @@ __webpack_require__.r(__webpack_exports__);
 
  // Headers
 
-axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2I4ODcwMmUxNzViODAwNmQwZTM4YmMiLCJpYXQiOjE1NTU1OTcwNTh9.5lM-AZrrCiO8tZRTeTnGeue0rZLZvF5WhlzPlB8E73A";
-axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Content-Type"] = "application/json";
-axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] = "application/json"; // Endpoints
+axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common['Authorization'] = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2I4ODcwMmUxNzViODAwNmQwZTM4YmMiLCJpYXQiOjE1NTU1OTcwNTh9.5lM-AZrrCiO8tZRTeTnGeue0rZLZvF5WhlzPlB8E73A';
+axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common['Content-Type'] = 'application/json';
+axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common['Accept'] = 'application/json'; // Endpoints
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   user: {
@@ -34,7 +34,7 @@ axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] =
               case 0:
                 _context.prev = 0;
                 _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://aerolab-challenge.now.sh/user/me");
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://aerolab-challenge.now.sh/user/me');
 
               case 3:
                 return _context.abrupt("return", _context.sent);
@@ -68,7 +68,7 @@ axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] =
               case 0:
                 _context2.prev = 0;
                 _context2.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://aerolab-challenge.now.sh/user/history");
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://aerolab-challenge.now.sh/user/history');
 
               case 3:
                 return _context2.abrupt("return", _context2.sent);
@@ -102,7 +102,7 @@ axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] =
               case 0:
                 _context3.prev = 0;
                 _context3.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("https://aerolab-challenge.now.sh/user/points", {
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('https://aerolab-challenge.now.sh/user/points', {
                   amount: amount
                 });
 
@@ -138,7 +138,7 @@ axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] =
               case 0:
                 _context4.prev = 0;
                 _context4.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("https://aerolab-challenge.now.sh/redeem", {
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('https://aerolab-challenge.now.sh/redeem', {
                   productId: productId
                 });
 
@@ -176,7 +176,7 @@ axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] =
               case 0:
                 _context5.prev = 0;
                 _context5.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://aerolab-challenge.now.sh/products");
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://aerolab-challenge.now.sh/products');
 
               case 3:
                 return _context5.abrupt("return", _context5.sent);
@@ -296,10 +296,10 @@ var RedeemButton = function RedeemButton(_ref) {
       lineNumber: 21
     },
     __self: this
-  }, userData.points > product.cost ? "REDEEM" : react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("strong", {
+  }, userData.points > product.cost ? 'REDEEM' : react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("strong", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 30
     },
     __self: this
   }, "- ".concat(Math.abs(userData.points - product.cost)))));
@@ -308,15 +308,15 @@ var RedeemButton = function RedeemButton(_ref) {
 var Button = _emotion_styled__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject(), function (_ref3) {
   var userData = _ref3.userData,
       product = _ref3.product;
-  return userData.points > product.cost ? "#ffec5c" : "#d70026";
+  return userData.points > product.cost ? '#ffec5c' : '#d70026';
 }, function (_ref4) {
   var userData = _ref4.userData,
       product = _ref4.product;
-  return userData.points > product.cost ? "#d70026" : "#002c54";
+  return userData.points > product.cost ? '#d70026' : '#002c54';
 }, function (_ref5) {
   var userData = _ref5.userData,
       product = _ref5.product;
-  return userData.points > product.cost ? "pointer" : "auto";
+  return userData.points > product.cost ? 'pointer' : 'auto';
 });
 /* harmony default export */ __webpack_exports__["default"] = (RedeemButton);
 
@@ -362,7 +362,7 @@ var Product = function Product(_ref) {
       userData = _ref.userData;
 
   var productNameForUrl = function productNameForUrl(name) {
-    return name.toLowerCase().replace(/\s+/g, "-");
+    return name.toLowerCase().replace(/\s+/g, '-');
   };
 
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
@@ -379,7 +379,7 @@ var Product = function Product(_ref) {
     __self: this
   }, product.name), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: {
-      pathname: "/detail",
+      pathname: '/detail',
       query: {
         id: product._id
       }
@@ -394,19 +394,19 @@ var Product = function Product(_ref) {
     src: product.img.url,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 23
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 25
     },
     __self: this
   }, product.category), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 26
     },
     __self: this
   }, product.cost), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_shared_RedeemButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -414,7 +414,7 @@ var Product = function Product(_ref) {
     userData: userData,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 27
     },
     __self: this
   })));
@@ -445,7 +445,7 @@ var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/layouts/MainLayout.
 
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: grid;\n  grid-template: 10vh / repeat(auto-fill, minmax(300px, 1fr));\n  justify-content: center;\n  grid-gap: 3vh;\n  padding: 1vh;\n  background-color: #FFEC5C;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: grid;\n  grid-template: 10vh / repeat(auto-fill, minmax(300px, 1fr));\n  justify-content: center;\n  grid-gap: 3vh;\n  padding: 1vh;\n  background-color: #ffec5c;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -39602,7 +39602,7 @@ var IndexPage = function IndexPage(_ref) {
   var products = _ref.products,
       userData = _ref.userData;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(""),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(''),
       _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_3__["default"])(_useState, 2),
       selectedFilter = _useState2[0],
       setSelectedFilter = _useState2[1];
@@ -39693,18 +39693,18 @@ var IndexPage = function IndexPage(_ref) {
       lineNumber: 48
     },
     __self: this
-  }, sortedPrice ? "Ascendending" : "Descending")), productContext.productState.products && ramda__WEBPACK_IMPORTED_MODULE_6__["pipe"](ramda__WEBPACK_IMPORTED_MODULE_6__["filter"](function (product) {
+  }, sortedPrice ? 'Ascendending' : 'Descending')), productContext.productState.products && ramda__WEBPACK_IMPORTED_MODULE_6__["pipe"](ramda__WEBPACK_IMPORTED_MODULE_6__["filter"](function (product) {
     return product.category.includes(selectedFilter);
   }), ramda__WEBPACK_IMPORTED_MODULE_6__["ifElse"](function () {
     return sortedPrice;
-  }, ramda__WEBPACK_IMPORTED_MODULE_6__["sort"](ramda__WEBPACK_IMPORTED_MODULE_6__["ascend"](ramda__WEBPACK_IMPORTED_MODULE_6__["prop"]("cost"))), ramda__WEBPACK_IMPORTED_MODULE_6__["sort"](ramda__WEBPACK_IMPORTED_MODULE_6__["descend"](ramda__WEBPACK_IMPORTED_MODULE_6__["prop"]("cost")))), ramda__WEBPACK_IMPORTED_MODULE_6__["map"](function (product) {
+  }, ramda__WEBPACK_IMPORTED_MODULE_6__["sort"](ramda__WEBPACK_IMPORTED_MODULE_6__["ascend"](ramda__WEBPACK_IMPORTED_MODULE_6__["prop"]('cost'))), ramda__WEBPACK_IMPORTED_MODULE_6__["sort"](ramda__WEBPACK_IMPORTED_MODULE_6__["descend"](ramda__WEBPACK_IMPORTED_MODULE_6__["prop"]('cost')))), ramda__WEBPACK_IMPORTED_MODULE_6__["map"](function (product) {
     return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_components_index_Product__WEBPACK_IMPORTED_MODULE_9__["default"], {
       key: product._id,
       product: product,
       userData: userContext.userState.data,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57
+        lineNumber: 61
       },
       __self: this
     });
@@ -39801,7 +39801,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!*************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fniconiahi%2FDocuments%2Fhooky-withdraw%2Fpages%2Findex.jsx ***!
   \*************************************************************************************************************************************/
@@ -39824,5 +39824,5 @@ module.exports = dll_829b10deddf10e1653a8;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

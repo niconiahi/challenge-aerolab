@@ -1,19 +1,19 @@
-import { useContext } from "react";
-import styled from "@emotion/styled";
-import TopBar from "./components/TopBar";
+import { useContext } from 'react'
+import styled from '@emotion/styled'
+import TopBar from './components/TopBar'
 
 // State
-import UserContext from "../state/user/context";
+import UserContext from '../state/user/context'
 
 const MainLayout = ({ children }) => {
-  const userContext = useContext(UserContext);
+  const userContext = useContext(UserContext)
   return (
     <Container>
       <TopBar userData={userContext.userState.data} />
       {children}
     </Container>
-  );
-};
+  )
+}
 
 const Container = styled.div`
   display: grid;
@@ -21,7 +21,7 @@ const Container = styled.div`
   justify-content: center;
   grid-gap: 3vh;
   padding: 1vh;
-  background-color: #FFEC5C;
-`;
+  background-color: #ffec5c;
+`
 
-export default MainLayout;
+export default MainLayout

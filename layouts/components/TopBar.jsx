@@ -1,30 +1,30 @@
-import styled from "@emotion/styled";
-import Link from "next/link";
+import styled from '@emotion/styled'
+import Link from 'next/link'
 
 // Material UI Icons
-import HomeIcon from "@material-ui/icons/Home";
-import FaceIcon from "@material-ui/icons/Face";
+import HomeIcon from '@material-ui/icons/Home'
+import FaceIcon from '@material-ui/icons/Face'
 
 const TopBar = ({ userData }) => {
   return (
     <Container>
-        <Link href="/">
-          <a>
-            <HomeIcon />
-          </a>
-        </Link>
-      
+      <Link href='/'>
+        <a>
+          <HomeIcon />
+        </a>
+      </Link>
+
       <RightContainer>
         <span>{userData && `Points:  ${userData.points}`}</span>
-        <Link href="/user">
+        <Link href='/user'>
           <a>
             <FaceIcon />
           </a>
         </Link>
       </RightContainer>
     </Container>
-  );
-};
+  )
+}
 
 const Container = styled.div`
   grid-column: 1 / -1;
@@ -46,12 +46,12 @@ const Container = styled.div`
     font-size: 1.4em;
     border-bottom: 1px dashed #d70026;
   }
-`;
+`
 
 const RightContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-`;
+`
 
-export default TopBar;
+export default TopBar

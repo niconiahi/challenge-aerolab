@@ -18,9 +18,9 @@ __webpack_require__.r(__webpack_exports__);
 
  // Headers
 
-axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2I4ODcwMmUxNzViODAwNmQwZTM4YmMiLCJpYXQiOjE1NTU1OTcwNTh9.5lM-AZrrCiO8tZRTeTnGeue0rZLZvF5WhlzPlB8E73A";
-axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Content-Type"] = "application/json";
-axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] = "application/json"; // Endpoints
+axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common['Authorization'] = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2I4ODcwMmUxNzViODAwNmQwZTM4YmMiLCJpYXQiOjE1NTU1OTcwNTh9.5lM-AZrrCiO8tZRTeTnGeue0rZLZvF5WhlzPlB8E73A';
+axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common['Content-Type'] = 'application/json';
+axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common['Accept'] = 'application/json'; // Endpoints
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   user: {
@@ -34,7 +34,7 @@ axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] =
               case 0:
                 _context.prev = 0;
                 _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://aerolab-challenge.now.sh/user/me");
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://aerolab-challenge.now.sh/user/me');
 
               case 3:
                 return _context.abrupt("return", _context.sent);
@@ -68,7 +68,7 @@ axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] =
               case 0:
                 _context2.prev = 0;
                 _context2.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://aerolab-challenge.now.sh/user/history");
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://aerolab-challenge.now.sh/user/history');
 
               case 3:
                 return _context2.abrupt("return", _context2.sent);
@@ -102,7 +102,7 @@ axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] =
               case 0:
                 _context3.prev = 0;
                 _context3.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("https://aerolab-challenge.now.sh/user/points", {
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('https://aerolab-challenge.now.sh/user/points', {
                   amount: amount
                 });
 
@@ -138,7 +138,7 @@ axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] =
               case 0:
                 _context4.prev = 0;
                 _context4.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("https://aerolab-challenge.now.sh/redeem", {
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('https://aerolab-challenge.now.sh/redeem', {
                   productId: productId
                 });
 
@@ -176,7 +176,7 @@ axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] =
               case 0:
                 _context5.prev = 0;
                 _context5.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://aerolab-challenge.now.sh/products");
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://aerolab-challenge.now.sh/products');
 
               case 3:
                 return _context5.abrupt("return", _context5.sent);
@@ -20401,7 +20401,7 @@ var GlobalState = function GlobalState(_ref) {
       type: _user_reducers__WEBPACK_IMPORTED_MODULE_5__["USER_UPDATE"],
       userData: userData
     });
-  }; // Las pretendia usar pero tuve un problema con useReducer 
+  }; // Las pretendia usar pero tuve un problema con useReducer
   // y el hecho de que no se por que razon no se puede ejecutar async-await
   // en el body de su ejecucion. Si hay dudas de lo que intente hacer, por favor
   // comunicarse conmigo. Encantado de explicar como lo encare
@@ -20531,9 +20531,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var PRODUCT_REDEEM = "PRODUCT_REDEEM";
-var USER_UPDATE = "USER_UPDATE";
-var POINTS_ADD = "POINTS_ADD";
+var PRODUCT_REDEEM = 'PRODUCT_REDEEM';
+var USER_UPDATE = 'USER_UPDATE';
+var POINTS_ADD = 'POINTS_ADD';
 
 var redeemProduct =
 /*#__PURE__*/

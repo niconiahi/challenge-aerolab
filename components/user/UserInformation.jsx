@@ -1,29 +1,29 @@
-import { useContext } from "react";
-import styled from "@emotion/styled";
-import { format } from "date-fns";
-import api from "../../api";
+import { useContext } from 'react'
+import styled from '@emotion/styled'
+import { format } from 'date-fns'
+import api from '../../api'
 
 // Components
-import RedeemedProduct from "../../components/user/RedeemedProduct";
+import RedeemedProduct from '../../components/user/RedeemedProduct'
 
 // State
-import UserContext from "../../state/user/context";
+import UserContext from '../../state/user/context'
 
 const UserInformation = ({ userData }) => {
-  const userContext = useContext(UserContext);
+  const userContext = useContext(UserContext)
 
-  const addPoints = async quantity => {
-    await api.user.addPoints(quantity);
-    const userDataRes = await api.user.getData();
+  const addPoints = async (quantity) => {
+    await api.user.addPoints(quantity)
+    const userDataRes = await api.user.getData()
 
-    userContext.updateUserData(userDataRes.data);
-  };
+    userContext.updateUserData(userDataRes.data)
+  }
 
   return (
     <>
       <UserDataContainer>
         <h2>{userData.name}</h2>
-        <h3>{`Joined: ${format(userData.createDate, "DD MMMM of YYYY")}`}</h3>
+        <h3>{`Joined: ${format(userData.createDate, 'DD MMMM of YYYY')}`}</h3>
         <h4>Press a button and get more points</h4>
         <LeftContainer>
           <Button onClick={() => addPoints(1000)}>
@@ -45,13 +45,13 @@ const UserInformation = ({ userData }) => {
       </UserDataContainer>
       <UserRedeemHistoryContainer>
         <h3>Redeem History</h3>
-        {userData.redeemHistory.map(product => (
+        {userData.redeemHistory.map((product) => (
           <RedeemedProduct product={product} />
         ))}
       </UserRedeemHistoryContainer>
     </>
-  );
-};
+  )
+}
 
 const UserDataContainer = styled.div`
   grid-column: 1 / 3;
@@ -69,7 +69,7 @@ const UserDataContainer = styled.div`
   > h4 {
     color: #002c54;
   }
-`;
+`
 
 const UserRedeemHistoryContainer = styled.div`
   grid-column: 3 / 5;
@@ -82,13 +82,13 @@ const UserRedeemHistoryContainer = styled.div`
   > h3 {
     border-bottom: 3px dashed #002c54;
   }
-`;
+`
 
 const LeftContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-`;
+`
 
 const Button = styled.div`
   display: flex;
@@ -105,6 +105,6 @@ const Button = styled.div`
   :first-of-type {
     margin-left: 3vh;
   }
-`;
+`
 
-export default UserInformation;
+export default UserInformation

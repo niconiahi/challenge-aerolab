@@ -1,13 +1,13 @@
-import styled from "@emotion/styled";
-import Link from "next/link";
+import styled from '@emotion/styled'
+import Link from 'next/link'
 
 // Components
-import RedeemButton from "../_shared/RedeemButton";
+import RedeemButton from '../_shared/RedeemButton'
 
 const Product = ({ product, userData }) => {
-  const productNameForUrl = name => {
-    return name.toLowerCase().replace(/\s+/g, "-");
-  };
+  const productNameForUrl = (name) => {
+    return name.toLowerCase().replace(/\s+/g, '-')
+  }
 
   return (
     <Container>
@@ -16,11 +16,10 @@ const Product = ({ product, userData }) => {
           <h2>{product.name}</h2>
           <Link
             href={{
-              pathname: "/detail",
-              query: { id: product._id }
+              pathname: '/detail',
+              query: { id: product._id },
             }}
-            as={`/detail/${productNameForUrl(product.name)}`}
-          >
+            as={`/detail/${productNameForUrl(product.name)}`}>
             <img src={product.img.url} />
           </Link>
           <h3>{product.category}</h3>
@@ -29,8 +28,8 @@ const Product = ({ product, userData }) => {
         </>
       )}
     </Container>
-  );
-};
+  )
+}
 
 const Container = styled.div`
   display: flex;
@@ -57,8 +56,8 @@ const Container = styled.div`
     border: 1px dashed #d70026;
     cursor: pointer;
   }
-`;
+`
 
-export default Product;
+export default Product
 
 // _id, category, cost, name, img.url

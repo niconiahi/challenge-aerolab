@@ -1,20 +1,20 @@
-import { useContext, useEffect } from "react";
-import styled from "@emotion/styled";
-import api from "../api";
+import { useContext, useEffect } from 'react'
+import styled from '@emotion/styled'
+import api from '../api'
 
 // Components
-import MainLayout from "../layouts/MainLayout";
-import RedeemButton from "../components/_shared/RedeemButton";
+import MainLayout from '../layouts/MainLayout'
+import RedeemButton from '../components/_shared/RedeemButton'
 
 // State
-import ProductContext from "../state/product/context";
+import ProductContext from '../state/product/context'
 
 const DetailsPage = ({ products, product }) => {
-  const productContext = useContext(ProductContext);
+  const productContext = useContext(ProductContext)
 
   useEffect(() => {
-    productContext.updateProductList(products);
-  }, []);
+    productContext.updateProductList(products)
+  }, [])
 
   return (
     <MainLayout>
@@ -28,8 +28,8 @@ const DetailsPage = ({ products, product }) => {
         <RedeemButton product={product} />
       </SpecContainer>
     </MainLayout>
-  );
-};
+  )
+}
 
 const ImgContainer = styled.div`
   grid-column: 1 / 3;
@@ -42,7 +42,7 @@ const ImgContainer = styled.div`
     object-fit: cover;
     border: 4px solid #002c54;
   }
-`;
+`
 
 const SpecContainer = styled.div`
   grid-column: 3 / 4;
@@ -67,19 +67,19 @@ const SpecContainer = styled.div`
   * {
     margin: 2vh 0;
   }
-`;
+`
 
-DetailsPage.getInitialProps = async router => {
-  let products = [];
-  let product = {};
+DetailsPage.getInitialProps = async (router) => {
+  let products = []
+  let product = {}
   try {
-    const productsRes = await api.product.getAllProducts();
-    products = productsRes.data;
-    product = products.find(x => x._id === router.query.id);
+    const productsRes = await api.product.getAllProducts()
+    products = productsRes.data
+    product = products.find((x) => x._id === router.query.id)
   } catch (err) {
-    console.error(err);
+    console.error(err)
   }
-  return { products, product };
-};
+  return { products, product }
+}
 
-export default DetailsPage;
+export default DetailsPage

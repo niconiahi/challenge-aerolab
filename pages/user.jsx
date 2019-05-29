@@ -1,21 +1,21 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect } from 'react'
 
 // API
-import api from '../api';
+import api from '../api'
 
 // Components
-import MainLayout from "../layouts/MainLayout";
-import UserInformation from '../components/user/UserInformation';
+import MainLayout from '../layouts/MainLayout'
+import UserInformation from '../components/user/UserInformation'
 
 // State
-import UserContext from "../state/user/context";
+import UserContext from '../state/user/context'
 
 const UserPage = ({ userData }) => {
-  const userContext = useContext(UserContext);
+  const userContext = useContext(UserContext)
 
   useEffect(() => {
-    userContext.updateUserData(userData);
-  }, []);
+    userContext.updateUserData(userData)
+  }, [])
 
   return (
     <>
@@ -23,19 +23,19 @@ const UserPage = ({ userData }) => {
         <UserInformation userData={userContext.userState.data} />
       </MainLayout>
     </>
-  ) 
+  )
 }
 
 UserPage.getInitialProps = async () => {
-  let userData = {};
+  let userData = {}
 
   try {
-    const res = await api.user.getData();
-    userData = res.data;
+    const res = await api.user.getData()
+    userData = res.data
   } catch (err) {
-    console.error(err);
+    console.error(err)
   }
-  return { userData };
-};
+  return { userData }
+}
 
 export default UserPage
