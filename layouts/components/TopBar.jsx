@@ -32,8 +32,7 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #002c54;
-  padding: 3vh;
+  background-color: #f9f9f9;
 
   a,
   p {

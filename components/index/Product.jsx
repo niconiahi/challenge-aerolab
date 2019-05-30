@@ -13,30 +13,73 @@ const Product = ({ product, userData }) => {
     <Container>
       {product && userData && (
         <>
-          <h2>{product.name}</h2>
           <Link
             href={{
               pathname: '/detail',
               query: { id: product._id },
             }}
             as={`/detail/${productNameForUrl(product.name)}`}>
-            <img src={product.img.url} />
+            <ImageContainer>
+              <img src={product.img.url} />
+            </ImageContainer>
           </Link>
-          <h3>{product.category}</h3>
-          <span>{product.cost}</span>
-          <RedeemButton product={product} userData={userData} />
+          <InformationContainer>
+            <h6>{product.category}</h6>
+            <h5>{product.name}</h5>
+          </InformationContainer>
+          {/* <span>{product.cost}</span>
+          <RedeemButton product={product} userData={userData} /> */}
         </>
       )}
     </Container>
   )
 }
 
+const InformationContainer = styled.div`
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-top: 1rem;
+
+  h6,
+  h5 {
+    margin: 0.1rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+    color: #616161;
+  }
+
+  h6 {
+    font-size: 0.75rem;
+    color: #a3a3a3;
+  }
+`
+
+const ImageContainer = styled.div`
+  max-height: 180px;
+  margin-top: 5%;
+  max-width: 90%;
+  border-bottom: 1px solid #f9f9f9;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`
+
 const Container = styled.div`
   display: flex;
+  height: 270px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid #d70026;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
+  background-color: white;
 
   h2 {
     color: #002c54;
@@ -53,7 +96,6 @@ const Container = styled.div`
   }
 
   img {
-    border: 1px dashed #d70026;
     cursor: pointer;
   }
 `

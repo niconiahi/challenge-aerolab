@@ -7,16 +7,21 @@ import api from '../api'
 // Components
 import MainLayout from '../layouts/MainLayout'
 import Product from '../components/index/Product'
+import FiltersBar from '../components/index/FiltersBar'
 
 // State
 import ProductContext from '../state/product/context'
 import UserContext from '../state/user/context'
 
 const IndexPage = ({ products, userData }) => {
-  const [selectedFilter, setSelectedFilter] = useState('')
-  const [sortedPrice, setSortedPrice] = useState(true)
+  const [isDescending, setIsDescending] = useState(true)
+  const [selectedCategory, setSelectedCategory] = useState('')
+  const [prop, setProp] = useState('Cost')
+  const [criteria, setCriteria] = useState('')
+
   const productContext = useContext(ProductContext)
   const userContext = useContext(UserContext)
+  const allProducts = productContext.productState.products
 
   useEffect(() => {
     productContext.updateProductList(products)
@@ -24,7 +29,7 @@ const IndexPage = ({ products, userData }) => {
   }, [])
 
   const filterOptions = () => {
-    return productContext.productState.products.reduce((acc, product) => {
+    return allProducts.reduce((acc, product) => {
       if (acc.indexOf(product.category) === -1) {
         acc.push(product.category)
       }
@@ -32,82 +37,51 @@ const IndexPage = ({ products, userData }) => {
     }, [])
   }
 
+  const productsToShow = () => {
+    return R.pipe(
+      R.filter((product) => product.name.toLowerCase().includes(criteria.toLowerCase())),
+      R.filter((product) =>
+        product.category.toLowerCase().includes(selectedCategory.toLowerCase())
+      ),
+      R.ifElse(
+        () => isDescending,
+        R.sort(R.descend(R.prop(prop.toLowerCase()))),
+        R.sort(R.ascend(R.prop(prop.toLowerCase())))
+      )
+    )(allProducts)
+  }
+
   return (
     <>
       <MainLayout>
-        <FiltersContainer>
-          <h5>Filtrar por: </h5>
-          <h5>Categorias </h5>
-          <select onChange={(e) => setSelectedFilter(e.target.value)}>
-            <option value=''>All</option>
-            {filterOptions().map((category) => (
-              <option value={category}>{category}</option>
-            ))}
-          </select>
-          <h5>Precio </h5>
-          <Button onClick={() => setSortedPrice(!sortedPrice)}>
-            {sortedPrice ? 'Ascendending' : 'Descending'}
-          </Button>
-        </FiltersContainer>
-        {productContext.productState.products &&
-          R.pipe(
-            R.filter((product) => product.category.includes(selectedFilter)),
-            R.ifElse(
-              () => sortedPrice,
-              R.sort(R.ascend(R.prop('cost'))),
-              R.sort(R.descend(R.prop('cost')))
-            ),
-            R.map((product) => (
+        <FiltersBar
+          filterOptions={filterOptions()}
+          setIsDescending={setIsDescending}
+          isDescending={isDescending}
+          setProp={setProp}
+          setCriteria={setCriteria}
+          setSelectedCategory={setSelectedCategory}
+        />
+        <ProductsContainer>
+          {allProducts &&
+            productsToShow().map((product) => (
               <Product
                 key={product._id}
                 product={product}
                 userData={userContext.userState.data}
               />
-            ))
-          )(productContext.productState.products)}
+            ))}
+        </ProductsContainer>
       </MainLayout>
     </>
   )
 }
 
-const FiltersContainer = styled.div`
-  grid-column: 1 / -1;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: #002c54;
-  padding: 1vh;
-
-  select {
-    background-color: #d70026;
-    box-sizing: border-box;
-    margin: 0;
-    color: #ffec5c;
-    border: none;
-    padding: 0.5vh;
-    width: 15vh;
-    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
-    border-radius: 0.5vh;
-  }
-
-  h5 {
-    color: #ffec5c;
-    margin: 0 1vh;
-    padding: none;
-  }
-`
-
-const Button = styled.button`
-  background-color: #d70026;
-  box-sizing: border-box;
-  margin: 0;
-  color: #ffec5c;
-  border: none;
-  padding: 0.5vh;
-  width: 15vh;
-  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
-  border-radius: 0.5vh;
+const ProductsContainer = styled.div`
+  grid-column: 2 / -2;
+  display: grid;
+  grid-template: auto / repeat(auto-fill, minmax(260px, 1fr));
+  grid-gap: 24px;
 `
 
 IndexPage.getInitialProps = async () => {

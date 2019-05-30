@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import styled from '@emotion/styled'
 import TopBar from './components/TopBar'
+import Banner from './components/Banner'
 
 // State
 import UserContext from '../state/user/context'
@@ -10,6 +11,7 @@ const MainLayout = ({ children }) => {
   return (
     <Container>
       <TopBar userData={userContext.userState.data} />
+      <Banner />
       {children}
     </Container>
   )
@@ -17,11 +19,10 @@ const MainLayout = ({ children }) => {
 
 const Container = styled.div`
   display: grid;
-  grid-template: 10vh / repeat(auto-fill, minmax(300px, 1fr));
+  grid-template: auto / 6vw 1fr 6vw;
   justify-content: center;
-  grid-gap: 3vh;
-  padding: 1vh;
-  background-color: #ffec5c;
+  min-height: 100vh;
+  background-color: #f9f9f9;
 `
 
 export default MainLayout

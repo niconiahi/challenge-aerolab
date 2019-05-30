@@ -322,6 +322,158 @@ var Button = _emotion_styled__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templa
 
 /***/ }),
 
+/***/ "./components/index/FiltersBar.jsx":
+/*!*****************************************!*\
+  !*** ./components/index/FiltersBar.jsx ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/styled */ "./node_modules/@emotion/styled/dist/styled.browser.esm.js");
+
+var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/components/index/FiltersBar.jsx";
+
+
+function _templateObject4() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 350px;\n  border-bottom: 1px solid #d3d3d3;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  background-color: #ededed;\n  outline: none;\n  margin: 0;\n  color: #a3a3a3;\n  border: none;\n  width: 175px;\n  padding: 1rem;\n  border-radius: 20.5px;\n  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);\n  font-size: 1.4rem;\n\n  :hover {\n    cursor: pointer;\n  }\n\n  span {\n    font-size: 1.4rem;\n  }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  grid-column: 2 / -2;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n  padding: 1vh;\n  margin-bottom: 4rem;\n\n  h5 {\n    color: #ffec5c;\n    margin: 0 1vh;\n    padding: none;\n  }\n\n  * {\n    margin-right: 1.25rem;\n  }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-size: 1.4rem;\n  color: #a3a3a3;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+
+
+var FiltersBar = function FiltersBar(_ref) {
+  var filterOptions = _ref.filterOptions,
+      setSelectedCategory = _ref.setSelectedCategory,
+      isDescending = _ref.isDescending,
+      setIsDescending = _ref.setIsDescending,
+      setProp = _ref.setProp,
+      setCriteria = _ref.setCriteria;
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Label, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, "Sort by: "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Select, {
+    onChange: function onChange(e) {
+      return setSelectedCategory(e.target.value);
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+    value: "",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, "All"), filterOptions.map(function (category) {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+      value: category,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: this
+    }, category);
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Button, {
+    onClick: function onClick() {
+      return setIsDescending(!isDescending);
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, isDescending ? 'Ascendending' : 'Descending'), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Select, {
+    onClick: function onClick(e) {
+      return setProp(e.target.value);
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }, ['Name', 'Cost'].map(function (propOption) {
+    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+      value: propOption,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }, propOption);
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(FancyInput, {
+    onChange: function onChange(e) {
+      return setCriteria(e.target.value);
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: this
+  }));
+};
+
+var Label = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].label(_templateObject());
+var Container = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2());
+var Button = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject3());
+var Select = Button.withComponent('select');
+var Input = Button.withComponent('input');
+var FancyInput = Object(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"])(Input)(_templateObject4());
+/* harmony default export */ __webpack_exports__["default"] = (FiltersBar); // _id, category, cost, name, img.url
+
+/***/ }),
+
 /***/ "./components/index/Product.jsx":
 /*!**************************************!*\
   !*** ./components/index/Product.jsx ***!
@@ -342,8 +494,28 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/components/index/Product.jsx";
 
 
+function _templateObject3() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  height: 270px;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);\n  background-color: white;\n\n  h2 {\n    color: #002c54;\n  }\n\n  h3,\n  span {\n    background-color: #002c54;\n    color: #ffec5c;\n    padding: 0.5vh;\n    border-radius: 0.5vh;\n    align-self: flex-end;\n    margin-right: 1vh;\n  }\n\n  img {\n    cursor: pointer;\n  }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  max-height: 180px;\n  margin-top: 5%;\n  max-width: 90%;\n  border-bottom: 1px solid #f9f9f9;\n\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n  }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  border: 2px solid #d70026;\n\n  h2 {\n    color: #002c54;\n  }\n\n  h3,\n  span {\n    background-color: #002c54;\n    color: #ffec5c;\n    padding: 0.5vh;\n    border-radius: 0.5vh;\n    align-self: flex-end;\n    margin-right: 1vh;\n  }\n\n  img {\n    border: 1px dashed #d70026;\n    cursor: pointer;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 90%;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  align-items: flex-start;\n  margin-top: 1rem;\n\n  h6,\n  h5 {\n    margin: 0.1rem;\n  }\n\n  h5 {\n    font-size: 1rem;\n    color: #616161;\n  }\n\n  h6 {\n    font-size: 0.75rem;\n    color: #a3a3a3;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -371,13 +543,7 @@ var Product = function Product(_ref) {
       lineNumber: 13
     },
     __self: this
-  }, product && userData && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: this
-  }, product.name), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  }, product && userData && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
     href: {
       pathname: '/detail',
       query: {
@@ -387,7 +553,13 @@ var Product = function Product(_ref) {
     as: "/detail/".concat(productNameForUrl(product.name)),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 16
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ImageContainer, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -397,30 +569,30 @@ var Product = function Product(_ref) {
       lineNumber: 23
     },
     __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, product.category), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(InformationContainer, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 26
     },
     __self: this
-  }, product.cost), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_shared_RedeemButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    product: product,
-    userData: userData,
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h6", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 27
     },
     __self: this
-  })));
+  }, product.category), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h5", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: this
+  }, product.name))));
 };
 
-var Container = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+var InformationContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+var ImageContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2());
+var Container = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject3());
 /* harmony default export */ __webpack_exports__["default"] = (Product); // _id, category, cost, name, img.url
 
 /***/ }),
@@ -439,13 +611,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/styled */ "./node_modules/@emotion/styled/dist/styled.browser.esm.js");
 /* harmony import */ var _components_TopBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/TopBar */ "./layouts/components/TopBar.jsx");
-/* harmony import */ var _state_user_context__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../state/user/context */ "./state/user/context.js");
+/* harmony import */ var _components_Banner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Banner */ "./layouts/components/Banner.jsx");
+/* harmony import */ var _state_user_context__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../state/user/context */ "./state/user/context.js");
 
 var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/layouts/MainLayout.jsx";
 
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: grid;\n  grid-template: 10vh / repeat(auto-fill, minmax(300px, 1fr));\n  justify-content: center;\n  grid-gap: 3vh;\n  padding: 1vh;\n  background-color: #ffec5c;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: grid;\n  grid-template: auto / 6vw 1fr 6vw;\n  justify-content: center;\n  min-height: 100vh;\n  background-color: #f9f9f9;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -456,24 +629,31 @@ function _templateObject() {
 
 
 
+
  // State
 
 
 
 var MainLayout = function MainLayout(_ref) {
   var children = _ref.children;
-  var userContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_state_user_context__WEBPACK_IMPORTED_MODULE_4__["default"]);
+  var userContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["useContext"])(_state_user_context__WEBPACK_IMPORTED_MODULE_5__["default"]);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 12
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_TopBar__WEBPACK_IMPORTED_MODULE_3__["default"], {
     userData: userContext.userState.data,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 13
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_Banner__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
     },
     __self: this
   }), children);
@@ -481,6 +661,76 @@ var MainLayout = function MainLayout(_ref) {
 
 var Container = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
 /* harmony default export */ __webpack_exports__["default"] = (MainLayout);
+
+/***/ }),
+
+/***/ "./layouts/components/Banner.jsx":
+/*!***************************************!*\
+  !*** ./layouts/components/Banner.jsx ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/styled */ "./node_modules/@emotion/styled/dist/styled.browser.esm.js");
+/* harmony import */ var _material_ui_icons_Home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/Home */ "./node_modules/@material-ui/icons/Home.js");
+/* harmony import */ var _material_ui_icons_Home__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Home__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_icons_Face__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/Face */ "./node_modules/@material-ui/icons/Face.js");
+/* harmony import */ var _material_ui_icons_Face__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Face__WEBPACK_IMPORTED_MODULE_4__);
+
+var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/layouts/components/Banner.jsx";
+
+
+function _templateObject2() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  grid-column: 1 / -1;\n  height: 400px;\n  margin-bottom: 4rem;\n\n  img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n  }\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+ // Material UI Icons
+
+
+
+
+var NavigationBar = function NavigationBar(_ref) {
+  var userData = _ref.userData;
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Container, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+    src: "https://dummyimage.com/1280x720/000/fff.png",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }));
+};
+
+var Container = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+var RightContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2());
+/* harmony default export */ __webpack_exports__["default"] = (NavigationBar);
 
 /***/ }),
 
@@ -518,7 +768,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  grid-column: 1 / -1;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  background-color: #002c54;\n  padding: 3vh;\n\n  a,\n  p {\n    color: #ffec5c;\n  }\n\n  span {\n    margin-right: 3vh;\n    color: #ffec5c;\n    font-size: 1.4em;\n    border-bottom: 1px dashed #d70026;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  grid-column: 1 / -1;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  background-color: #f9f9f9;\n\n  a,\n  p {\n    color: #ffec5c;\n  }\n\n  span {\n    margin-right: 3vh;\n    color: #ffec5c;\n    font-size: 1.4em;\n    border-bottom: 1px dashed #d70026;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -39557,8 +39807,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../api */ "./api/index.js");
 /* harmony import */ var _layouts_MainLayout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../layouts/MainLayout */ "./layouts/MainLayout.jsx");
 /* harmony import */ var _components_index_Product__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/index/Product */ "./components/index/Product.jsx");
-/* harmony import */ var _state_product_context__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../state/product/context */ "./state/product/context.js");
-/* harmony import */ var _state_user_context__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../state/user/context */ "./state/user/context.js");
+/* harmony import */ var _components_index_FiltersBar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/index/FiltersBar */ "./components/index/FiltersBar.jsx");
+/* harmony import */ var _state_product_context__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../state/product/context */ "./state/product/context.js");
+/* harmony import */ var _state_user_context__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../state/user/context */ "./state/user/context.js");
 
 
 
@@ -39566,18 +39817,8 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/pages/index.jsx";
 
 
-function _templateObject2() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  background-color: #d70026;\n  box-sizing: border-box;\n  margin: 0;\n  color: #ffec5c;\n  border: none;\n  padding: 0.5vh;\n  width: 15vh;\n  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);\n  border-radius: 0.5vh;\n"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  grid-column: 1 / -1;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  align-items: center;\n  background-color: #002c54;\n  padding: 1vh;\n\n  select {\n    background-color: #d70026;\n    box-sizing: border-box;\n    margin: 0;\n    color: #ffec5c;\n    border: none;\n    padding: 0.5vh;\n    width: 15vh;\n    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);\n    border-radius: 0.5vh;\n  }\n\n  h5 {\n    color: #ffec5c;\n    margin: 0 1vh;\n    padding: none;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  grid-column: 2 / -2;\n  display: grid;\n  grid-template: auto / repeat(auto-fill, minmax(260px, 1fr));\n  grid-gap: 24px;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -39593,6 +39834,7 @@ function _templateObject() {
  // Components
 
 
+
  // State
 
 
@@ -39602,25 +39844,36 @@ var IndexPage = function IndexPage(_ref) {
   var products = _ref.products,
       userData = _ref.userData;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(''),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(true),
       _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_3__["default"])(_useState, 2),
-      selectedFilter = _useState2[0],
-      setSelectedFilter = _useState2[1];
+      isDescending = _useState2[0],
+      setIsDescending = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(true),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(''),
       _useState4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_3__["default"])(_useState3, 2),
-      sortedPrice = _useState4[0],
-      setSortedPrice = _useState4[1];
+      selectedCategory = _useState4[0],
+      setSelectedCategory = _useState4[1];
 
-  var productContext = Object(react__WEBPACK_IMPORTED_MODULE_4__["useContext"])(_state_product_context__WEBPACK_IMPORTED_MODULE_10__["default"]);
-  var userContext = Object(react__WEBPACK_IMPORTED_MODULE_4__["useContext"])(_state_user_context__WEBPACK_IMPORTED_MODULE_11__["default"]);
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])('Cost'),
+      _useState6 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_3__["default"])(_useState5, 2),
+      prop = _useState6[0],
+      setProp = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_4__["useState"])(''),
+      _useState8 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_3__["default"])(_useState7, 2),
+      criteria = _useState8[0],
+      setCriteria = _useState8[1];
+
+  var productContext = Object(react__WEBPACK_IMPORTED_MODULE_4__["useContext"])(_state_product_context__WEBPACK_IMPORTED_MODULE_11__["default"]);
+  var userContext = Object(react__WEBPACK_IMPORTED_MODULE_4__["useContext"])(_state_user_context__WEBPACK_IMPORTED_MODULE_12__["default"]);
+  var allProducts = productContext.productState.products;
   Object(react__WEBPACK_IMPORTED_MODULE_4__["useEffect"])(function () {
     productContext.updateProductList(products);
     userContext.updateUserData(userData);
   }, []);
 
   var filterOptions = function filterOptions() {
-    return productContext.productState.products.reduce(function (acc, product) {
+    return allProducts.reduce(function (acc, product) {
       if (acc.indexOf(product.category) === -1) {
         acc.push(product.category);
       }
@@ -39629,90 +39882,55 @@ var IndexPage = function IndexPage(_ref) {
     }, []);
   };
 
+  var productsToShow = function productsToShow() {
+    return ramda__WEBPACK_IMPORTED_MODULE_6__["pipe"](ramda__WEBPACK_IMPORTED_MODULE_6__["filter"](function (product) {
+      return product.name.toLowerCase().includes(criteria.toLowerCase());
+    }), ramda__WEBPACK_IMPORTED_MODULE_6__["filter"](function (product) {
+      return product.category.toLowerCase().includes(selectedCategory.toLowerCase());
+    }), ramda__WEBPACK_IMPORTED_MODULE_6__["ifElse"](function () {
+      return isDescending;
+    }, ramda__WEBPACK_IMPORTED_MODULE_6__["sort"](ramda__WEBPACK_IMPORTED_MODULE_6__["descend"](ramda__WEBPACK_IMPORTED_MODULE_6__["prop"](prop.toLowerCase()))), ramda__WEBPACK_IMPORTED_MODULE_6__["sort"](ramda__WEBPACK_IMPORTED_MODULE_6__["ascend"](ramda__WEBPACK_IMPORTED_MODULE_6__["prop"](prop.toLowerCase())))))(allProducts);
+  };
+
   return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_4___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_layouts_MainLayout__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 56
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(FiltersContainer, {
+  }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_components_index_FiltersBar__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    filterOptions: filterOptions(),
+    setIsDescending: setIsDescending,
+    isDescending: isDescending,
+    setProp: setProp,
+    setCriteria: setCriteria,
+    setSelectedCategory: setSelectedCategory,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 57
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h5", {
+  }), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(ProductsContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 65
     },
     __self: this
-  }, "Filtrar por: "), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h5", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 40
-    },
-    __self: this
-  }, "Categorias "), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("select", {
-    onChange: function onChange(e) {
-      return setSelectedFilter(e.target.value);
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("option", {
-    value: "",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: this
-  }, "All"), filterOptions().map(function (category) {
-    return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("option", {
-      value: category,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 44
-      },
-      __self: this
-    }, category);
-  })), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("h5", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47
-    },
-    __self: this
-  }, "Precio "), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(Button, {
-    onClick: function onClick() {
-      return setSortedPrice(!sortedPrice);
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 48
-    },
-    __self: this
-  }, sortedPrice ? 'Ascendending' : 'Descending')), productContext.productState.products && ramda__WEBPACK_IMPORTED_MODULE_6__["pipe"](ramda__WEBPACK_IMPORTED_MODULE_6__["filter"](function (product) {
-    return product.category.includes(selectedFilter);
-  }), ramda__WEBPACK_IMPORTED_MODULE_6__["ifElse"](function () {
-    return sortedPrice;
-  }, ramda__WEBPACK_IMPORTED_MODULE_6__["sort"](ramda__WEBPACK_IMPORTED_MODULE_6__["ascend"](ramda__WEBPACK_IMPORTED_MODULE_6__["prop"]('cost'))), ramda__WEBPACK_IMPORTED_MODULE_6__["sort"](ramda__WEBPACK_IMPORTED_MODULE_6__["descend"](ramda__WEBPACK_IMPORTED_MODULE_6__["prop"]('cost')))), ramda__WEBPACK_IMPORTED_MODULE_6__["map"](function (product) {
+  }, allProducts && productsToShow().map(function (product) {
     return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_components_index_Product__WEBPACK_IMPORTED_MODULE_9__["default"], {
       key: product._id,
       product: product,
       userData: userContext.userState.data,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61
+        lineNumber: 68
       },
       __self: this
     });
-  }))(productContext.productState.products)));
+  }))));
 };
 
-var FiltersContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject());
-var Button = _emotion_styled__WEBPACK_IMPORTED_MODULE_5__["default"].button(_templateObject2());
+var ProductsContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject());
 IndexPage.getInitialProps =
 /*#__PURE__*/
 Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
