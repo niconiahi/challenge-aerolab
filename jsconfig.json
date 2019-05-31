@@ -17,6 +17,9 @@
       "state/*": [
         "state/*"
       ],
+      "static/*": [
+        "static/*"
+      ]
     }
   }
 }

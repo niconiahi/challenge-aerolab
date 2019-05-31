@@ -18,21 +18,32 @@ const DetailsPage = ({ products, product }) => {
 
   return (
     <MainLayout>
-      <ImgContainer>
-        <img src={product.img.hdUrl} />
-      </ImgContainer>
-      <SpecContainer>
-        <h2>{product.name}</h2>
-        <h3>{product.category}</h3>
-        <h4>{`Cost: ${product.cost}`}</h4>
-        <RedeemButton product={product} />
-      </SpecContainer>
+      <Container>
+        <ImgContainer>
+          <img src={product.img.hdUrl} />
+        </ImgContainer>
+        <SpecContainer>
+          <div>
+            <h2>{product.name}</h2>
+            <h3>{product.category}</h3>
+          </div>
+          <RedeemButton product={product}>${product.cost}</RedeemButton>
+        </SpecContainer>
+      </Container>
     </MainLayout>
   )
 }
 
+const Container = styled.div`
+  grid-column: 2 / -2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+`
+
 const ImgContainer = styled.div`
-  grid-column: 1 / 3;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -40,32 +51,26 @@ const ImgContainer = styled.div`
 
   img {
     object-fit: cover;
-    border: 4px solid #002c54;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
   }
 `
 
 const SpecContainer = styled.div`
-  grid-column: 3 / 4;
   display: flex;
+  height: 100%;
+  padding: 1.5rem;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-between;
 
-  h2,
+  h2 {
+    color: #616161;
+    margin: 0;
+  }
+
   h3 {
-    color: #d70026;
-  }
-
-  h4 {
-    color: #002c54;
-  }
-
-  :last-child {
-    color: #ffec5c;
-  }
-
-  * {
-    margin: 2vh 0;
+    margin-top: 0;
+    color: #a3a3a3;
   }
 `
 

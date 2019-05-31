@@ -25,7 +25,7 @@ const RedeemButton = ({ product }) => {
           userData.points > product.cost ? () => redeemProduct(product._id) : false
         }>
         {userData.points > product.cost ? (
-          'REDEEM'
+          'Reedem now'
         ) : (
           <strong>{`- ${Math.abs(userData.points - product.cost)}`}</strong>
         )}
@@ -37,17 +37,14 @@ const RedeemButton = ({ product }) => {
 const Button = styled.div`
   display: flex;
   align-items: center;
-  color: ${({ userData, product }) =>
-    userData.points > product.cost ? '#ffec5c' : '#d70026'};
+  color: #616161;
   justify-content: center;
-  height: 8vh;
-  width: 25vh;
-  background-color: ${({ userData, product }) =>
-    userData.points > product.cost ? '#d70026' : '#002c54'};
-  cursor: ${({ userData, product }) =>
-    userData.points > product.cost ? 'pointer' : 'auto'};
-  border-radius: 0.5vh;
-  margin: 2vh;
+  width: 14.25rem;
+  height: 2.625rem;
+  border-radius: 1.25rem;
+  background-color: white;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 `
 
 export default RedeemButton

@@ -2,25 +2,24 @@ import styled from '@emotion/styled'
 import Link from 'next/link'
 
 // Material UI Icons
-import HomeIcon from '@material-ui/icons/Home'
+// import LogoIcon from '../../static/icons/logo.svg'
 import FaceIcon from '@material-ui/icons/Face'
 
 const TopBar = ({ userData }) => {
   return (
     <Container>
       <Link href='/'>
-        <a>
-          <HomeIcon />
-        </a>
+        <a>{/* <img src={LogoIcon} /> */}</a>
       </Link>
 
       <RightContainer>
-        <span>{userData && `Points:  ${userData.points}`}</span>
         <Link href='/user'>
-          <a>
-            <FaceIcon />
-          </a>
+          <a>Jonh Kite</a>
         </Link>
+        <PointsContainer>
+          <span>{userData && `${userData.points}`}</span>
+          <div />
+        </PointsContainer>
       </RightContainer>
     </Container>
   )
@@ -33,24 +32,43 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: #f9f9f9;
-
-  a,
-  p {
-    color: #ffec5c;
-  }
-
-  span {
-    margin-right: 3vh;
-    color: #ffec5c;
-    font-size: 1.4em;
-    border-bottom: 1px dashed #d70026;
-  }
+  margin: 1.5rem;
 `
 
 const RightContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  a {
+    color: #616161;
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin-right: 1.125rem;
+  }
+`
+
+const PointsContainer = styled.div`
+  color: #616161;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 7rem;
+  font-size: 1.5rem;
+  height: 3rem;
+  border-radius: 20.5px;
+  background-color: #ededed;
+
+  span {
+    margin-right: 0.375rem;
+  }
+
+  div {
+    width: 24px;
+    height: 24px;
+    background-image: radial-gradient(circle at 50% 50%, #ffcf00, #f7ae15);
+    border-radius: 50%;
+  }
 `
 
 export default TopBar

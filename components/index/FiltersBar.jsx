@@ -16,14 +16,14 @@ const FiltersBar = ({
         <option value={category}>{category}</option>
       ))}
     </Select>
-    <Button onClick={() => setIsDescending(!isDescending)}>
-      {isDescending ? 'Ascendending' : 'Descending'}
-    </Button>
     <Select onClick={(e) => setProp(e.target.value)}>
       {['Name', 'Cost'].map((propOption) => (
         <option value={propOption}>{propOption}</option>
       ))}
     </Select>
+    <ButtonClassic onClick={() => setIsDescending(!isDescending)}>
+      {isDescending ? 'Ascendending' : 'Descending'}
+    </ButtonClassic>
     <FancyInput onChange={(e) => setCriteria(e.target.value)} />
   </Container>
 )
@@ -48,12 +48,14 @@ const Container = styled.div`
     padding: none;
   }
 
-  * {
+  label,
+  select,
+  button {
     margin-right: 1.25rem;
   }
 `
 
-const Button = styled.button`
+export const ButtonClassic = styled.button`
   background-color: #ededed;
   outline: none;
   margin: 0;
@@ -67,6 +69,9 @@ const Button = styled.button`
 
   :hover {
     cursor: pointer;
+
+    background-color: #0ad4fa;
+    color: white;
   }
 
   span {
@@ -74,8 +79,8 @@ const Button = styled.button`
   }
 `
 
-const Select = Button.withComponent('select')
-const Input = Button.withComponent('input')
+const Select = ButtonClassic.withComponent('select')
+const Input = ButtonClassic.withComponent('input')
 
 const FancyInput = styled(Input)`
   width: 350px;
