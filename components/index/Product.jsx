@@ -4,6 +4,9 @@ import Link from 'next/link'
 // Components
 import RedeemButton from '../_shared/RedeemButton'
 
+// Styled style
+import { PointsContainer } from '../../layouts/components/TopBar'
+
 const Product = ({ product, userData }) => {
   const productNameForUrl = (name) => {
     return name.toLowerCase().replace(/\s+/g, '-')
@@ -27,6 +30,20 @@ const Product = ({ product, userData }) => {
             <h6>{product.category}</h6>
             <h5>{product.name}</h5>
           </InformationContainer>
+          <DisplayOver>
+            <IconContainer>
+              <i className='fas fa-shopping-bag' />
+            </IconContainer>
+          </DisplayOver>
+          <HoverContainer>
+            <PointsAndButtonContainer>
+              <FancyPointsContainer>
+                <span>{product.cost}</span>
+                <div />
+              </FancyPointsContainer>
+              <RedeemButton product={product} />
+            </PointsAndButtonContainer>
+          </HoverContainer>
           {/* <span>{product.cost}</span>
           <RedeemButton product={product} userData={userData} /> */}
         </>
@@ -34,6 +51,60 @@ const Product = ({ product, userData }) => {
     </Container>
   )
 }
+
+const PointsAndButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
+const FancyPointsContainer = styled(PointsContainer)`
+  background-color: transparent;
+  color: white;
+  font-size: 2.25rem;
+`
+
+const HoverContainer = styled.div`
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #25bbf1;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 350ms ease;
+
+  :hover {
+    opacity: 0.9;
+
+    * {
+      opacity: 1;
+    }
+  }
+`
+
+const IconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.625rem;
+  z-index: 5;
+  width: 2.625rem;
+  border-radius: 50%;
+  background-color: white;
+  margin: 0.75rem 0.75rem 0 0;
+
+  i {
+    color: #0ad4fa;
+  }
+`
 
 const InformationContainer = styled.div`
   width: 90%;
@@ -59,6 +130,20 @@ const InformationContainer = styled.div`
   }
 `
 
+const DisplayOver = styled.div`
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  transition: background-color 350ms ease;
+  background-color: transparent;
+  box-sizing: border-box;
+`
+
 const ImageContainer = styled.div`
   max-height: 180px;
   margin-top: 5%;
@@ -77,22 +162,13 @@ const Container = styled.div`
   height: 270px;
   flex-direction: column;
   justify-content: center;
+  position: relative;
   align-items: center;
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
   background-color: white;
 
   h2 {
     color: #002c54;
-  }
-
-  h3,
-  span {
-    background-color: #002c54;
-    color: #ffec5c;
-    padding: 0.5vh;
-    border-radius: 0.5vh;
-    align-self: flex-end;
-    margin-right: 1vh;
   }
 
   img {

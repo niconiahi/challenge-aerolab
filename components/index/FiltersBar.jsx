@@ -13,12 +13,16 @@ const FiltersBar = ({
     <Select onChange={(e) => setSelectedCategory(e.target.value)}>
       <option value=''>All</option>
       {filterOptions.map((category) => (
-        <option value={category}>{category}</option>
+        <option key={category} value={category}>
+          {category}
+        </option>
       ))}
     </Select>
     <Select onClick={(e) => setProp(e.target.value)}>
       {['Name', 'Cost'].map((propOption) => (
-        <option value={propOption}>{propOption}</option>
+        <option key={propOption} value={propOption}>
+          {propOption}
+        </option>
       ))}
     </Select>
     <ButtonClassic onClick={() => setIsDescending(!isDescending)}>

@@ -11,6 +11,10 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <style>{`body { margin: 0 } /* custom! */`}</style>
+          <link
+            rel='stylesheet'
+            href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css'
+          />
         </Head>
         <body className='custom_class'>
           <Main />

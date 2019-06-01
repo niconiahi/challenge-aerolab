@@ -12,7 +12,7 @@ import UserContext from '../../state/user/context'
 const UserRedeemHistory = ({ userData }) => (
   <UserRedeemHistoryContainer>
     {userData.redeemHistory.map((product) => (
-      <RedeemedProduct product={product} />
+      <RedeemedProduct key={product.name} product={product} />
     ))}
   </UserRedeemHistoryContainer>
 )

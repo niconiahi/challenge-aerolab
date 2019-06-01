@@ -48,7 +48,7 @@ const RightContainer = styled.div`
   }
 `
 
-const PointsContainer = styled.div`
+export const PointsContainer = styled.div`
   color: #616161;
   display: flex;
   align-items: center;

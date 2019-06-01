@@ -82,6 +82,8 @@ const ProductsContainer = styled.div`
   display: grid;
   grid-template: auto / repeat(auto-fill, minmax(260px, 1fr));
   grid-gap: 24px;
+  align-items: center;
+  justify-items: center;
 `
 
 IndexPage.getInitialProps = async () => {
