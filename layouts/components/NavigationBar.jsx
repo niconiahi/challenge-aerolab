@@ -1,25 +1,35 @@
+import { useState, useContext, useEffect } from 'react'
 import styled from '@emotion/styled'
 
-// Material UI Icons
-import HomeIcon from '@material-ui/icons/Home'
-import FaceIcon from '@material-ui/icons/Face'
+// State
+import ProductContext from '../../state/product/context'
 
 const NavigationBar = ({ userData }) => {
+  const productContext = useContext(ProductContext)
+  const pagesTotal = productContext.productState.products.length / 16
+  const currentPage = productContext.productState.pageNumber + 1
+
   return (
     <Container>
-      <Link href='/'>
-        <a>
-          <HomeIcon />
-        </a>
-      </Link>
+      <LeftContainer>
+        <span>{`${currentPage} of ${pagesTotal}`}</span>
+      </LeftContainer>
 
       <RightContainer>
-        <span>{userData && `Points:  ${userData.points}`}</span>
-        <Link href='/user'>
-          <a>
-            <FaceIcon />
-          </a>
-        </Link>
+        {currentPage > 1 && (
+          <button
+            onClick={() =>
+              productContext.setPageNumber(productContext.productState.pageNumber - 1)
+            }>
+            <i className='fas fa-angle-left' />
+          </button>
+        )}
+        <button
+          onClick={() =>
+            productContext.setPageNumber(productContext.productState.pageNumber + 1)
+          }>
+          <i className='fas fa-angle-right' />
+        </button>
       </RightContainer>
     </Container>
   )
@@ -31,12 +41,43 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 1.5rem;
+  margin-bottom: 3rem;
+`
+
+const LeftContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  span {
+    font-size: 1.5rem;
+    color: #616161;
+  }
 `
 
 const RightContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  button {
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid #d9d9d9;
+    height: 3rem;
+    width: 3rem;
+    margin-left: 0.75rem;
+
+    :focus {
+      outline: none;
+    }
+
+    i {
+      color: #d9d9d9;
+    }
+  }
 `
 
 export default NavigationBar

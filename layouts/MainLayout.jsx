@@ -5,6 +5,7 @@ import Banner from './components/Banner'
 
 // State
 import UserContext from '../state/user/context'
+import NavigationBar from './components/NavigationBar'
 
 const MainLayout = ({ children }) => {
   const userContext = useContext(UserContext)
@@ -13,6 +14,7 @@ const MainLayout = ({ children }) => {
       <TopBar userData={userContext.userState.data} />
       <Banner />
       {children}
+      <NavigationBar />
     </Container>
   )
 }

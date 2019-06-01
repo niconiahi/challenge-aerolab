@@ -1525,7 +1525,8 @@ var GlobalState = function GlobalState(_ref) {
   var children = _ref.children;
 
   var _useReducer = Object(react__WEBPACK_IMPORTED_MODULE_1__["useReducer"])(_product_reducers__WEBPACK_IMPORTED_MODULE_3__["ProductReducers"], {
-    products: []
+    products: [],
+    pageNumber: 0
   }),
       _useReducer2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useReducer, 2),
       productState = _useReducer2[0],
@@ -1537,6 +1538,29 @@ var GlobalState = function GlobalState(_ref) {
       _useReducer4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useReducer3, 2),
       userState = _useReducer4[0],
       userDispatch = _useReducer4[1];
+
+  var getProductsPage = function getProductsPage() {
+    return productState.products.slice(productState.pageNumber * 16, (productState.pageNumber + 1) * 16); // The below code generates an array of arrays of 16 elements but I decided not to use it
+    //
+    // let productsPaginated = []
+    // let pageNumber = 0
+    //
+    // while (pageNumber < productState.products.length / pageSize) {
+    //   productsPaginated.push(
+    //     productState.products.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize)
+    //   )
+    //   pageNumber++
+    // }
+    //
+    // return productsPaginated
+  };
+
+  var setPageNumber = function setPageNumber(pageNumber) {
+    productDispatch({
+      type: _product_reducers__WEBPACK_IMPORTED_MODULE_3__["PAGE_NUMBER_SET"],
+      pageNumber: pageNumber
+    });
+  };
 
   var updateProductList = function updateProductList(products) {
     productDispatch({
@@ -1565,11 +1589,13 @@ var GlobalState = function GlobalState(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_product_context__WEBPACK_IMPORTED_MODULE_2__["default"].Provider, {
     value: {
       productState: productState,
-      updateProductList: updateProductList
+      updateProductList: updateProductList,
+      getProductsPage: getProductsPage,
+      setPageNumber: setPageNumber
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 67
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_user_context__WEBPACK_IMPORTED_MODULE_4__["default"].Provider, {
@@ -1581,7 +1607,7 @@ var GlobalState = function GlobalState(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 74
     },
     __self: this
   }, children));
@@ -1606,7 +1632,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({
   products: [],
-  updateProductList: function updateProductList() {}
+  pagesTotal: 0,
+  updateProductList: function updateProductList() {},
+  setPageNumber: function setPageNumber() {}
 }));
 
 /***/ }),
@@ -1615,21 +1643,28 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************!*\
   !*** ./state/product/reducers.js ***!
   \***********************************/
-/*! exports provided: PRODUCTS_UPDATE, ProductReducers */
+/*! exports provided: PRODUCTS_UPDATE, PAGE_NUMBER_SET, ProductReducers */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PRODUCTS_UPDATE", function() { return PRODUCTS_UPDATE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PAGE_NUMBER_SET", function() { return PAGE_NUMBER_SET; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductReducers", function() { return ProductReducers; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
 
 var PRODUCTS_UPDATE = 'PRODUCTS_UPDATE';
+var PAGE_NUMBER_SET = 'PAGE_NUMBER_SET';
 var ProductReducers = function ProductReducers(state, action) {
   switch (action.type) {
     case PRODUCTS_UPDATE:
       return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
         products: action.products
+      });
+
+    case PAGE_NUMBER_SET:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        pageNumber: action.pageNumber
       });
 
     default:

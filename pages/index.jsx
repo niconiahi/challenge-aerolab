@@ -8,6 +8,7 @@ import api from '../api'
 import MainLayout from '../layouts/MainLayout'
 import Product from '../components/index/Product'
 import FiltersBar from '../components/index/FiltersBar'
+import NavigationBar from '../layouts/components/NavigationBar'
 
 // State
 import ProductContext from '../state/product/context'
@@ -21,15 +22,16 @@ const IndexPage = ({ products, userData }) => {
 
   const productContext = useContext(ProductContext)
   const userContext = useContext(UserContext)
-  const allProducts = productContext.productState.products
+  const currentPage = productContext.productState.pageNumber
+  const pageProducts = productContext.getProductsPage(currentPage)
 
   useEffect(() => {
     productContext.updateProductList(products)
     userContext.updateUserData(userData)
   }, [])
 
-  const filterOptions = () => {
-    return allProducts.reduce((acc, product) => {
+  const getCategoryOptions = () => {
+    return pageProducts.reduce((acc, product) => {
       if (acc.indexOf(product.category) === -1) {
         acc.push(product.category)
       }
@@ -48,22 +50,24 @@ const IndexPage = ({ products, userData }) => {
         R.sort(R.descend(R.prop(prop.toLowerCase()))),
         R.sort(R.ascend(R.prop(prop.toLowerCase())))
       )
-    )(allProducts)
+    )(pageProducts)
   }
 
   return (
     <>
       <MainLayout>
         <FiltersBar
-          filterOptions={filterOptions()}
+          categoryOptions={getCategoryOptions()}
           setIsDescending={setIsDescending}
           isDescending={isDescending}
           setProp={setProp}
           setCriteria={setCriteria}
           setSelectedCategory={setSelectedCategory}
         />
+        <NavigationBar />
+
         <ProductsContainer>
-          {allProducts &&
+          {pageProducts &&
             productsToShow().map((product) => (
               <Product
                 key={product._id}
@@ -84,6 +88,7 @@ const ProductsContainer = styled.div`
   grid-gap: 24px;
   align-items: center;
   justify-items: center;
+  margin-bottom: 3.75rem;
 `
 
 IndexPage.getInitialProps = async () => {

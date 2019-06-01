@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 const FiltersBar = ({
-  filterOptions,
+  categoryOptions,
   setSelectedCategory,
   isDescending,
   setIsDescending,
@@ -12,7 +12,7 @@ const FiltersBar = ({
     <Label>Sort by: </Label>
     <Select onChange={(e) => setSelectedCategory(e.target.value)}>
       <option value=''>All</option>
-      {filterOptions.map((category) => (
+      {categoryOptions.map((category) => (
         <option key={category} value={category}>
           {category}
         </option>
@@ -44,7 +44,7 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding: 1vh;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 
   h5 {
     color: #ffec5c;
@@ -61,7 +61,6 @@ const Container = styled.div`
 
 export const ButtonClassic = styled.button`
   background-color: #ededed;
-  outline: none;
   margin: 0;
   color: #a3a3a3;
   border: none;
@@ -70,6 +69,10 @@ export const ButtonClassic = styled.button`
   border-radius: 20.5px;
   box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
   font-size: 1.4rem;
+
+  :focus {
+    outline: none;
+  }
 
   :hover {
     cursor: pointer;

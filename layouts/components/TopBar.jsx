@@ -1,10 +1,6 @@
 import styled from '@emotion/styled'
 import Link from 'next/link'
 
-// Material UI Icons
-// import LogoIcon from '../../static/icons/logo.svg'
-import FaceIcon from '@material-ui/icons/Face'
-
 const TopBar = ({ userData }) => {
   return (
     <Container>
