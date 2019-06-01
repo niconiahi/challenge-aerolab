@@ -329,8 +329,28 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/components/index/FiltersBar.jsx";
 
 
-function _templateObject4() {
+function _templateObject6() {
   var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 350px;\n  border-bottom: 1px solid #d3d3d3;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  background-color: #ededed;\n  margin: 0;\n  color: #a3a3a3;\n  border: none;\n  width: 175px;\n  padding: 1rem;\n  border-radius: 20.5px;\n  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);\n  font-size: 1.4rem;\n\n  :focus {\n    outline: none;\n  }\n\n  :hover {\n    cursor: pointer;\n\n    background-color: #0ad4fa;\n    color: white;\n  }\n\n  span {\n    font-size: 1.4rem;\n  }\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n  padding: 1vh;\n  margin-bottom: 1rem;\n\n  h5 {\n    color: #ffec5c;\n    margin: 0 1vh;\n    padding: none;\n  }\n\n  label,\n  select,\n  button {\n    margin-right: 1.25rem;\n  }\n\n  @media (min-width: 681px) and (max-width: 1180px) {\n    flex-direction: column;\n    justify-content: center;\n    align-items: stretch;\n\n    * {\n      width: 100%;\n    }\n\n    select,\n    button {\n      margin: 0 0 0 1rem;\n    }\n\n    input {\n      margin: 1rem 0 0 0;\n      width: 100%;\n    }\n  }\n\n  @media (max-width: 680px) {\n    flex-direction: column;\n    justify-content: center;\n    align-items: stretch;\n\n    * {\n      width: 100%;\n    }\n\n    select,\n    button {\n      margin: 0 0 1rem 0;\n    }\n  }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -340,7 +360,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  background-color: #ededed;\n  margin: 0;\n  color: #a3a3a3;\n  border: none;\n  width: 175px;\n  padding: 1rem;\n  border-radius: 20.5px;\n  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);\n  font-size: 1.4rem;\n\n  :focus {\n    outline: none;\n  }\n\n  :hover {\n    cursor: pointer;\n\n    background-color: #0ad4fa;\n    color: white;\n  }\n\n  span {\n    font-size: 1.4rem;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-size: 1.4rem;\n  color: #a3a3a3;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -350,7 +370,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  grid-column: 2 / -2;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n  padding: 1vh;\n  margin-bottom: 1rem;\n\n  h5 {\n    color: #ffec5c;\n    margin: 0 1vh;\n    padding: none;\n  }\n\n  label,\n  select,\n  button {\n    margin-right: 1.25rem;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -360,7 +380,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  font-size: 1.4rem;\n  color: #a3a3a3;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-start;\n  align-items: center;\n\n  @media (max-width: 680px) {\n    flex-direction: column;\n    justify-content: center;\n    align-items: stretch;\n\n    * {\n      width: 100%;\n    }\n\n    label {\n      display: none;\n    }\n\n    select,\n    button {\n      margin: 0;\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -384,10 +404,16 @@ var FiltersBar = function FiltersBar(_ref) {
       lineNumber: 11
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Label, {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ButtonsContainer, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 12
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Label, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
     },
     __self: this
   }, "Sort by: "), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Select, {
@@ -396,14 +422,14 @@ var FiltersBar = function FiltersBar(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 14
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
     value: "",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 15
     },
     __self: this
   }, "All"), categoryOptions && categoryOptions.map(function (category) {
@@ -412,7 +438,7 @@ var FiltersBar = function FiltersBar(_ref) {
       value: category,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 17
+        lineNumber: 18
       },
       __self: this
     }, category);
@@ -422,7 +448,7 @@ var FiltersBar = function FiltersBar(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 23
     },
     __self: this
   }, ['Name', 'Cost'].map(function (propOption) {
@@ -431,7 +457,7 @@ var FiltersBar = function FiltersBar(_ref) {
       value: propOption,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 25
       },
       __self: this
     }, propOption);
@@ -441,27 +467,35 @@ var FiltersBar = function FiltersBar(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 30
     },
     __self: this
-  }, isDescending ? 'Ascendending' : 'Descending'), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(FancyInput, {
+  }, isDescending ? 'Ascendending' : 'Descending')), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(InputContainer, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(FancyInput, {
     onChange: function onChange(e) {
       return setCriteria(e.target.value);
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 35
     },
     __self: this
-  }));
+  })));
 };
 
-var Label = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].label(_templateObject());
-var Container = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2());
-var ButtonClassic = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject3());
+var ButtonsContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+var InputContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2());
+var Label = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].label(_templateObject3());
+var Container = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject4());
+var ButtonClassic = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].button(_templateObject5());
 var Select = ButtonClassic.withComponent('select');
 var Input = ButtonClassic.withComponent('input');
-var FancyInput = Object(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"])(Input)(_templateObject4());
+var FancyInput = Object(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"])(Input)(_templateObject6());
 /* harmony default export */ __webpack_exports__["default"] = (FiltersBar); // _id, category, cost, name, img.url
 
 /***/ }),
@@ -735,7 +769,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 90%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: stretch;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n  padding: 0 7vw;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: stretch;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -1019,8 +1053,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/layouts/components/TopBar.jsx";
 
-function _templateObject5() {
+function _templateObject6() {
   var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  color: #616161;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 7rem;\n  font-size: 1.5rem;\n  height: 3rem;\n  border-radius: 20.5px;\n  background-color: #ededed;\n\n  span {\n    margin-right: 0.375rem;\n  }\n\n  div {\n    width: 24px;\n    height: 24px;\n    background-image: radial-gradient(circle at 50% 50%, #ffcf00, #f7ae15);\n    border-radius: 50%;\n  }\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n\n  a {\n    color: #616161;\n    font-size: 1.5rem;\n    text-decoration: none;\n    margin-right: 1.125rem;\n  }\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -1030,7 +1074,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n\n  a {\n    color: #616161;\n    font-size: 1.5rem;\n    text-decoration: none;\n    margin-right: 1.125rem;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n\n  button,\n  label {\n    margin-right: 1.5rem;\n  }\n\n  @media (max-width: 510px) {\n    flex-direction: column;\n    align-items: stretch;\n    justify-content: center;\n\n    label {\n      margin-bottom: 1.5rem;\n      align-self: center;\n    }\n  }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -1040,7 +1084,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n\n  button,\n  label {\n    margin-right: 1.5rem;\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -1050,7 +1094,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  grid-column: 1 / -1;\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  background-color: #f9f9f9;\n  margin: 1.5rem;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  flex-direction: row;\n  justify-content: space-between;\n  align-items: center;\n  background-color: #f9f9f9;\n  margin: 1.5rem;\n\n  @media (max-width: 824px) {\n    justify-content: center;\n    flex-direction: column-reverse;\n\n    > div:nth-child(2) {\n      margin-bottom: 1.5rem;\n    }\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -1132,13 +1176,19 @@ var TopBar = function TopBar(_ref) {
       lineNumber: 26
     },
     __self: this
-  }, "Add points: "), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(ButtonClassicReloaded, {
+  }, "Add points: "), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(ButtonsContainer, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(ButtonClassicReloaded, {
     onClick: function onClick() {
       return addPoints(1000);
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 28
     },
     __self: this
   }, "1000"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(ButtonClassicReloaded, {
@@ -1147,7 +1197,7 @@ var TopBar = function TopBar(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 31
     },
     __self: this
   }, "5000"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(ButtonClassicReloaded, {
@@ -1156,37 +1206,37 @@ var TopBar = function TopBar(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 34
     },
     __self: this
-  }, "7500")), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(RightContainer, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: this
-  }, "Jonh Kite"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(PointsContainer, {
+  }, "7500"))), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(RightContainer, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 40
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 41
     },
     __self: this
-  }, userData && "".concat(userData.points)), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+  }, "Jonh Kite"), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(PointsContainer, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 42
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43
+    },
+    __self: this
+  }, userData && "".concat(userData.points)), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44
     },
     __self: this
   }))));
@@ -1194,9 +1244,10 @@ var TopBar = function TopBar(_ref) {
 
 var ButtonClassicReloaded = Object(_emotion_styled__WEBPACK_IMPORTED_MODULE_4__["default"])(_components_index_FiltersBar__WEBPACK_IMPORTED_MODULE_7__["ButtonClassic"])(_templateObject());
 var Container = _emotion_styled__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject2());
-var LeftContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject3());
-var RightContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject4());
-var PointsContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject5());
+var ButtonsContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject3());
+var LeftContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject4());
+var RightContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject5());
+var PointsContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject6());
 /* harmony default export */ __webpack_exports__["default"] = (TopBar);
 
 /***/ }),
@@ -40170,7 +40221,7 @@ var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/pages/index.jsx";
 
 
 function _templateObject2() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  grid-column: 2 / -2;\n  display: grid;\n  grid-template: auto / repeat(auto-fill, minmax(260px, 1fr));\n  grid-gap: 24px;\n  align-items: center;\n  justify-items: center;\n  margin-bottom: 3.75rem;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  display: grid;\n  grid-template: auto / repeat(auto-fill, minmax(260px, 1fr));\n  grid-gap: 24px;\n  align-items: center;\n  justify-items: center;\n  margin-bottom: 3.75rem;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;

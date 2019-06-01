@@ -90,7 +90,6 @@ const Container = styled.div`
 `
 
 const ProductsContainer = styled.div`
-  grid-column: 2 / -2;
   display: grid;
   grid-template: auto / repeat(auto-fill, minmax(260px, 1fr));
   grid-gap: 24px;

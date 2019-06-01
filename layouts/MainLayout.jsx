@@ -24,7 +24,8 @@ const MainLayout = ({ children }) => {
 }
 
 const BottomContainer = styled.div`
-  width: 90%;
+  width: 100%;
+  padding: 0 7vw;
   display: flex;
   flex-direction: column;
   justify-content: center;

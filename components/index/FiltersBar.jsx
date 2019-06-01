@@ -9,29 +9,65 @@ const FiltersBar = ({
   setCriteria,
 }) => (
   <Container>
-    <Label>Sort by: </Label>
-    <Select onChange={(e) => setSelectedCategory(e.target.value)}>
-      <option value=''>All</option>
-      {categoryOptions &&
-        categoryOptions.map((category) => (
-          <option key={category} value={category}>
-            {category}
+    <ButtonsContainer>
+      <Label>Sort by: </Label>
+      <Select onChange={(e) => setSelectedCategory(e.target.value)}>
+        <option value=''>All</option>
+        {categoryOptions &&
+          categoryOptions.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+      </Select>
+      <Select onClick={(e) => setProp(e.target.value)}>
+        {['Name', 'Cost'].map((propOption) => (
+          <option key={propOption} value={propOption}>
+            {propOption}
           </option>
         ))}
-    </Select>
-    <Select onClick={(e) => setProp(e.target.value)}>
-      {['Name', 'Cost'].map((propOption) => (
-        <option key={propOption} value={propOption}>
-          {propOption}
-        </option>
-      ))}
-    </Select>
-    <ButtonClassic onClick={() => setIsDescending(!isDescending)}>
-      {isDescending ? 'Ascendending' : 'Descending'}
-    </ButtonClassic>
-    <FancyInput onChange={(e) => setCriteria(e.target.value)} />
+      </Select>
+      <ButtonClassic onClick={() => setIsDescending(!isDescending)}>
+        {isDescending ? 'Ascendending' : 'Descending'}
+      </ButtonClassic>
+    </ButtonsContainer>
+    <InputContainer>
+      <FancyInput onChange={(e) => setCriteria(e.target.value)} />
+    </InputContainer>
   </Container>
 )
+const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  @media (max-width: 680px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    * {
+      width: 100%;
+    }
+
+    label {
+      display: none;
+    }
+
+    select,
+    button {
+      margin: 0;
+    }
+  }
+`
+
+const InputContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+`
 
 export const Label = styled.label`
   font-size: 1.4rem;
@@ -39,7 +75,6 @@ export const Label = styled.label`
 `
 
 const Container = styled.div`
-  grid-column: 2 / -2;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -57,6 +92,41 @@ const Container = styled.div`
   select,
   button {
     margin-right: 1.25rem;
+  }
+
+  @media (min-width: 681px) and (max-width: 1180px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    * {
+      width: 100%;
+    }
+
+    select,
+    button {
+      margin: 0 0 0 1rem;
+    }
+
+    input {
+      margin: 1rem 0 0 0;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 680px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    * {
+      width: 100%;
+    }
+
+    select,
+    button {
+      margin: 0 0 1rem 0;
+    }
   }
 `
 

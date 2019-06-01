@@ -24,15 +24,17 @@ const TopBar = ({ userData }) => {
     <Container>
       <LeftContainer>
         <Label>Add points: </Label>
-        <ButtonClassicReloaded onClick={() => addPoints(1000)}>
-          1000
-        </ButtonClassicReloaded>
-        <ButtonClassicReloaded onClick={() => addPoints(5000)}>
-          5000
-        </ButtonClassicReloaded>
-        <ButtonClassicReloaded onClick={() => addPoints(7500)}>
-          7500
-        </ButtonClassicReloaded>
+        <ButtonsContainer>
+          <ButtonClassicReloaded onClick={() => addPoints(1000)}>
+            1000
+          </ButtonClassicReloaded>
+          <ButtonClassicReloaded onClick={() => addPoints(5000)}>
+            5000
+          </ButtonClassicReloaded>
+          <ButtonClassicReloaded onClick={() => addPoints(7500)}>
+            7500
+          </ButtonClassicReloaded>
+        </ButtonsContainer>
       </LeftContainer>
 
       <RightContainer>
@@ -58,13 +60,26 @@ const ButtonClassicReloaded = styled(ButtonClassic)`
 `
 
 const Container = styled.div`
-  grid-column: 1 / -1;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background-color: #f9f9f9;
   margin: 1.5rem;
+
+  @media (max-width: 824px) {
+    justify-content: center;
+    flex-direction: column-reverse;
+
+    > div:nth-child(2) {
+      margin-bottom: 1.5rem;
+    }
+  }
+`
+const ButtonsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 `
 
 const LeftContainer = styled.div`
@@ -75,6 +90,17 @@ const LeftContainer = styled.div`
   button,
   label {
     margin-right: 1.5rem;
+  }
+
+  @media (max-width: 510px) {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+
+    label {
+      margin-bottom: 1.5rem;
+      align-self: center;
+    }
   }
 `
 
