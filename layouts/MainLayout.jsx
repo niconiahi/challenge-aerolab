@@ -9,9 +9,11 @@ import NavigationBar from './components/NavigationBar'
 
 const MainLayout = ({ children }) => {
   const userContext = useContext(UserContext)
+  const userData = userContext.userState.data
+  const addPoints = userContext.addPoints
   return (
     <Container>
-      <TopBar userData={userContext.userState.data} />
+      <TopBar userData={userData} addPoints={addPoints} />
       <Banner />
       {children}
       <NavigationBar />
@@ -22,7 +24,6 @@ const MainLayout = ({ children }) => {
 const Container = styled.div`
   display: grid;
   grid-template: auto / 6vw 1fr 6vw;
-  justify-content: center;
   min-height: 100vh;
   background-color: #f9f9f9;
 `

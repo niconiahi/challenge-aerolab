@@ -59,22 +59,10 @@ const LeftContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-`
 
-const Button = styled.div`
-  display: flex;
-  color: #ffec5c;
-  align-items: center;
-  justify-content: center;
-  height: 6vh;
-  width: 12vh;
-  background-color: #d70026;
-  border-radius: 0.5vh;
-  margin-right: 3vh;
-  cursor: pointer;
-
-  :first-of-type {
-    margin-left: 3vh;
+  button {
+    margin: 1.5rem 0;
+    margin-right: 0.5rem;
   }
 `
 

@@ -1688,7 +1688,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({
   data: {},
-  updateUserData: function updateUserData() {}
+  updateUserData: function updateUserData() {},
+  addPoints: function addPoints() {},
+  reedemProduct: function reedemProduct() {}
 }));
 
 /***/ }),

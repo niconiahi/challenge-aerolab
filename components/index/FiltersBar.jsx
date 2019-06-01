@@ -12,11 +12,12 @@ const FiltersBar = ({
     <Label>Sort by: </Label>
     <Select onChange={(e) => setSelectedCategory(e.target.value)}>
       <option value=''>All</option>
-      {categoryOptions.map((category) => (
-        <option key={category} value={category}>
-          {category}
-        </option>
-      ))}
+      {categoryOptions &&
+        categoryOptions.map((category) => (
+          <option key={category} value={category}>
+            {category}
+          </option>
+        ))}
     </Select>
     <Select onClick={(e) => setProp(e.target.value)}>
       {['Name', 'Cost'].map((propOption) => (
@@ -32,7 +33,7 @@ const FiltersBar = ({
   </Container>
 )
 
-const Label = styled.label`
+export const Label = styled.label`
   font-size: 1.4rem;
   color: #a3a3a3;
 `

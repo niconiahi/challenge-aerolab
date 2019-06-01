@@ -74,6 +74,10 @@ const RightContainer = styled.div`
       outline: none;
     }
 
+    :hover {
+      cursor: pointer;
+    }
+
     i {
       color: #d9d9d9;
     }
