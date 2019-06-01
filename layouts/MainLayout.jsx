@@ -15,15 +15,25 @@ const MainLayout = ({ children }) => {
     <Container>
       <TopBar userData={userData} addPoints={addPoints} />
       <Banner />
-      {children}
-      <NavigationBar />
+      <BottomContainer>
+        {children}
+        <NavigationBar />
+      </BottomContainer>
     </Container>
   )
 }
 
+const BottomContainer = styled.div`
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+`
+
 const Container = styled.div`
-  display: grid;
-  grid-template: auto / 6vw 1fr 6vw;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background-color: #f9f9f9;
 `

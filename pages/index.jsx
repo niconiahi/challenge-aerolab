@@ -56,30 +56,38 @@ const IndexPage = ({ products, userData }) => {
   return (
     <>
       <MainLayout>
-        <FiltersBar
-          categoryOptions={getCategoryOptions()}
-          setIsDescending={setIsDescending}
-          isDescending={isDescending}
-          setProp={setProp}
-          setCriteria={setCriteria}
-          setSelectedCategory={setSelectedCategory}
-        />
-        <NavigationBar />
+        <Container>
+          <FiltersBar
+            categoryOptions={getCategoryOptions()}
+            setIsDescending={setIsDescending}
+            isDescending={isDescending}
+            setProp={setProp}
+            setCriteria={setCriteria}
+            setSelectedCategory={setSelectedCategory}
+          />
+          <NavigationBar />
 
-        <ProductsContainer>
-          {pageProducts &&
-            productsToShow().map((product) => (
-              <Product
-                key={product._id}
-                product={product}
-                userData={userContext.userState.data}
-              />
-            ))}
-        </ProductsContainer>
+          <ProductsContainer>
+            {pageProducts &&
+              productsToShow().map((product) => (
+                <Product
+                  key={product._id}
+                  product={product}
+                  userData={userContext.userState.data}
+                />
+              ))}
+          </ProductsContainer>
+        </Container>
       </MainLayout>
     </>
   )
 }
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
 
 const ProductsContainer = styled.div`
   grid-column: 2 / -2;

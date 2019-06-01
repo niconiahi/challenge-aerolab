@@ -821,8 +821,18 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/layouts/MainLayout.jsx";
 
 
+function _templateObject2() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n  background-color: #f9f9f9;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: grid;\n  grid-template: auto / 6vw 1fr 6vw;\n  min-height: 100vh;\n  background-color: #f9f9f9;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 90%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: stretch;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -864,16 +874,23 @@ var MainLayout = function MainLayout(_ref) {
       lineNumber: 17
     },
     __self: this
-  }), children, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_NavigationBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(BottomContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 18
     },
     __self: this
-  }));
+  }, children, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_NavigationBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  })));
 };
 
-var Container = _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default.a.div(_templateObject());
+var BottomContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default.a.div(_templateObject());
+var Container = _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default.a.div(_templateObject2());
 /* harmony default export */ __webpack_exports__["default"] = (MainLayout);
 
 /***/ }),
@@ -2118,8 +2135,18 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/pages/index.jsx";
 
 
-function _templateObject() {
+function _templateObject2() {
   var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  grid-column: 2 / -2;\n  display: grid;\n  grid-template: auto / repeat(auto-fill, minmax(260px, 1fr));\n  grid-gap: 24px;\n  align-items: center;\n  justify-items: center;\n  margin-bottom: 3.75rem;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_2__["default"])(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -2201,6 +2228,12 @@ var IndexPage = function IndexPage(_ref) {
       lineNumber: 58
     },
     __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(Container, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: this
   }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_components_index_FiltersBar__WEBPACK_IMPORTED_MODULE_10__["default"], {
     categoryOptions: getCategoryOptions(),
     setIsDescending: setIsDescending,
@@ -2210,19 +2243,19 @@ var IndexPage = function IndexPage(_ref) {
     setSelectedCategory: setSelectedCategory,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 60
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(_layouts_components_NavigationBar__WEBPACK_IMPORTED_MODULE_11__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67
+      lineNumber: 68
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(ProductsContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 70
     },
     __self: this
   }, pageProducts && productsToShow().map(function (product) {
@@ -2232,14 +2265,15 @@ var IndexPage = function IndexPage(_ref) {
       userData: userContext.userState.data,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 73
       },
       __self: this
     });
-  }))));
+  })))));
 };
 
-var ProductsContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_5___default.a.div(_templateObject());
+var Container = _emotion_styled__WEBPACK_IMPORTED_MODULE_5___default.a.div(_templateObject());
+var ProductsContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_5___default.a.div(_templateObject2());
 IndexPage.getInitialProps =
 /*#__PURE__*/
 Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
