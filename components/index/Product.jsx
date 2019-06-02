@@ -12,6 +12,10 @@ const Product = ({ product, userData }) => {
     return name.toLowerCase().replace(/\s+/g, '-')
   }
 
+  const getNotEnoughNumber = () => {
+    return `${product.cost - userData.points}`
+  }
+
   return (
     <Container>
       {product && userData && (
@@ -31,9 +35,15 @@ const Product = ({ product, userData }) => {
             <h5>{product.name}</h5>
           </InformationContainer>
           <DisplayOver>
-            <IconContainer>
-              <i className='fas fa-shopping-bag' />
-            </IconContainer>
+            {userData.points > product.cost ? (
+              <IconContainer>
+                <i className='fas fa-shopping-bag' />
+              </IconContainer>
+            ) : (
+              <NotEnoughContainer>
+                <span>{`You need ${getNotEnoughNumber()}`}</span>
+              </NotEnoughContainer>
+            )}
           </DisplayOver>
           <HoverContainer>
             <PointsAndButtonContainer>
@@ -51,6 +61,12 @@ const Product = ({ product, userData }) => {
     </Container>
   )
 }
+const NotEnoughContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`
 
 const PointsAndButtonContainer = styled.div`
   display: flex;

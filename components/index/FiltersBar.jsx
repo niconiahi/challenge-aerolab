@@ -39,15 +39,26 @@ const FiltersBar = ({
 const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
+  flex: 1;
   justify-content: flex-start;
   align-items: center;
+
+  @media (min-width: 681px) and (max-width: 1180px) {
+    select,
+    button,
+    label {
+      width: 100%;
+    }
+  }
 
   @media (max-width: 680px) {
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
 
-    * {
+    select,
+    button,
+    input {
       width: 100%;
     }
 
@@ -57,7 +68,7 @@ const ButtonsContainer = styled.div`
 
     select,
     button {
-      margin: 0;
+      margin: 0 0 0.25rem 0;
     }
   }
 `
@@ -119,13 +130,21 @@ const Container = styled.div`
     justify-content: center;
     align-items: stretch;
 
-    * {
+    select,
+    button,
+    input {
       width: 100%;
     }
 
     select,
     button {
-      margin: 0 0 1rem 0;
+      margin: 0 0 0.5rem 0;
+    }
+
+    button {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
     }
   }
 `
