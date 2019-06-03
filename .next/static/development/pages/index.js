@@ -230,7 +230,7 @@ var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/components/_shared/
 
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  align-items: center;\n  color: #616161;\n  justify-content: center;\n  width: 14.25rem;\n  height: 2.625rem;\n  border-radius: 1.25rem;\n  background-color: white;\n  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);\n  cursor: pointer;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  align-items: center;\n  color: #616161;\n  border: none;\n  justify-content: center;\n  width: 14.25rem;\n  height: 2.625rem;\n  border-radius: 1.25rem;\n  background-color: white;\n  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);\n\n  :hover {\n    cursor: pointer;\n  }\n\n  :disabled {\n    cursor: default;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -288,24 +288,31 @@ var RedeemButton = function RedeemButton(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_3___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Button, {
     product: product,
     userData: userData,
-    onClick: userData.points > product.cost ? function () {
+    disabled: userData.points < product.cost,
+    onClick: function onClick() {
       return redeemProduct(product._id);
-    } : false,
+    },
     __source: {
       fileName: _jsxFileName,
       lineNumber: 21
     },
     __self: this
-  }, userData.points > product.cost ? 'Reedem now' : react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("strong", {
+  }, userData.points > product.cost ? react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 27
     },
     __self: this
-  }, "- ".concat(Math.abs(userData.points - product.cost)))));
+  }, "Reedem now") : react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: this
+  }, "You need more points")));
 };
 
-var Button = _emotion_styled__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject());
+var Button = _emotion_styled__WEBPACK_IMPORTED_MODULE_4__["default"].button(_templateObject());
 /* harmony default export */ __webpack_exports__["default"] = (RedeemButton);
 
 /***/ }),
@@ -542,7 +549,7 @@ function _templateObject8() {
 }
 
 function _templateObject7() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  position: absolute;\n  top: 0;\n  height: 100%;\n  width: 100%;\n  right: 0;\n  display: flex;\n  flex-direction: row;\n  justify-content: flex-end;\n  transition: background-color 350ms ease;\n  background-color: transparent;\n  box-sizing: border-box;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  position: absolute;\n  top: 0;\n  height: 100%;\n  width: 100%;\n  right: 0;\n  display: flex;\n  flex-direction: row;\n  align-items: flex-start;\n  justify-content: flex-end;\n  transition: background-color 350ms ease;\n  background-color: transparent;\n  box-sizing: border-box;\n"]);
 
   _templateObject7 = function _templateObject7() {
     return data;
@@ -602,7 +609,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  justify-content: center;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  background-color: #616161;\n  color: white;\n  font-size: 0.875rem;\n  margin: 0.75rem 0.75rem 0 0;\n  width: 8.4375rem;\n  opacity: 0.8;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -711,47 +718,53 @@ var Product = function Product(_ref) {
       lineNumber: 44
     },
     __self: this
-  }, "You need ".concat(getNotEnoughNumber())))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(HoverContainer, {
+  }, "You need ".concat(getNotEnoughNumber())), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 45
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(PointsAndButtonContainer, {
+  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(HoverContainer, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 49
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(FancyPointsContainer, {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(PointsAndButtonContainer, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 50
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(FancyPointsContainer, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 51
     },
     __self: this
-  }, product.cost), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 52
+    },
+    __self: this
+  }, product.cost), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_shared_RedeemButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
     product: product,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 55
     },
     __self: this
   })))));
 };
 
-var NotEnoughContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+var NotEnoughContainer = Object(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"])(_layouts_components_TopBar__WEBPACK_IMPORTED_MODULE_5__["PointsContainer"])(_templateObject());
 var PointsAndButtonContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2());
 var FancyPointsContainer = Object(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"])(_layouts_components_TopBar__WEBPACK_IMPORTED_MODULE_5__["PointsContainer"])(_templateObject3());
 var HoverContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject4());

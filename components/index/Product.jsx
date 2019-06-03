@@ -42,6 +42,7 @@ const Product = ({ product, userData }) => {
             ) : (
               <NotEnoughContainer>
                 <span>{`You need ${getNotEnoughNumber()}`}</span>
+                <div />
               </NotEnoughContainer>
             )}
           </DisplayOver>
@@ -61,11 +62,13 @@ const Product = ({ product, userData }) => {
     </Container>
   )
 }
-const NotEnoughContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+const NotEnoughContainer = styled(PointsContainer)`
+  background-color: #616161;
+  color: white;
+  font-size: 0.875rem;
+  margin: 0.75rem 0.75rem 0 0;
+  width: 8.4375rem;
+  opacity: 0.8;
 `
 
 const PointsAndButtonContainer = styled.div`
@@ -154,6 +157,7 @@ const DisplayOver = styled.div`
   right: 0;
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
   justify-content: flex-end;
   transition: background-color 350ms ease;
   background-color: transparent;
