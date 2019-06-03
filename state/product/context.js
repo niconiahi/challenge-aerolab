@@ -1,6 +1,8 @@
-import React from "react";
+import React from 'react'
 
 export default React.createContext({
   products: [],
-  updateProductList: () => {}
-});
+  pagesTotal: 0,
+  updateProductList: () => {},
+  setPageNumber: () => {},
+})

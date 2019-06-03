@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "SFProText";
+  src: url("/static/fonts/SF-Pro-Text-Regular.otf");
+  font-weight: 400;
+}
+
+* {
+  font-family: "SFProText";
+}

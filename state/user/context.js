@@ -1,6 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 export default React.createContext({
-    data: {},
-    updateUserData: () => {}
-});
+  data: {},
+  updateUserData: () => {},
+  addPoints: () => {},
+  reedemProduct: () => {},
+})

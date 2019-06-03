@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { format } from "date-fns";
+import styled from '@emotion/styled'
+import { format } from 'date-fns'
 
 const RedeemedProduct = ({ product }) => {
   return (
@@ -10,12 +10,12 @@ const RedeemedProduct = ({ product }) => {
         </div>
         <ProductInfoContainer>
           <h5>{`Cost: ${product.cost}`}</h5>
-          <h5>{`Redeemed on: ${format(product.createDate, "DD.MM.YYYY")}`}</h5>
+          <h5>{`Redeemed on: ${format(product.createDate, 'DD.MM.YYYY')}`}</h5>
         </ProductInfoContainer>
       </Container>
     </>
-  );
-};
+  )
+}
 
 const Container = styled.div`
   grid-column: 1 / 3;
@@ -35,11 +35,11 @@ const Container = styled.div`
       border-right: 2px solid #d70026;
     }
   }
-`;
+`
 
 const ProductInfoContainer = styled.div`
   display: flex;
   flex-direction: row;
-`;
+`
 
-export default RedeemedProduct;
+export default RedeemedProduct

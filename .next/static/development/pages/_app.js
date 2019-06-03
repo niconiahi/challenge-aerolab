@@ -18,9 +18,9 @@ __webpack_require__.r(__webpack_exports__);
 
  // Headers
 
-axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Authorization"] = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2I4ODcwMmUxNzViODAwNmQwZTM4YmMiLCJpYXQiOjE1NTU1OTcwNTh9.5lM-AZrrCiO8tZRTeTnGeue0rZLZvF5WhlzPlB8E73A";
-axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Content-Type"] = "application/json";
-axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] = "application/json"; // Endpoints
+axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common['Authorization'] = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1Y2I4ODcwMmUxNzViODAwNmQwZTM4YmMiLCJpYXQiOjE1NTU1OTcwNTh9.5lM-AZrrCiO8tZRTeTnGeue0rZLZvF5WhlzPlB8E73A';
+axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common['Content-Type'] = 'application/json';
+axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common['Accept'] = 'application/json'; // Endpoints
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   user: {
@@ -34,7 +34,7 @@ axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] =
               case 0:
                 _context.prev = 0;
                 _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://aerolab-challenge.now.sh/user/me");
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://aerolab-challenge.now.sh/user/me');
 
               case 3:
                 return _context.abrupt("return", _context.sent);
@@ -68,7 +68,7 @@ axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] =
               case 0:
                 _context2.prev = 0;
                 _context2.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://aerolab-challenge.now.sh/user/history");
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://aerolab-challenge.now.sh/user/history');
 
               case 3:
                 return _context2.abrupt("return", _context2.sent);
@@ -102,7 +102,7 @@ axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] =
               case 0:
                 _context3.prev = 0;
                 _context3.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("https://aerolab-challenge.now.sh/user/points", {
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('https://aerolab-challenge.now.sh/user/points', {
                   amount: amount
                 });
 
@@ -138,7 +138,7 @@ axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] =
               case 0:
                 _context4.prev = 0;
                 _context4.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("https://aerolab-challenge.now.sh/redeem", {
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('https://aerolab-challenge.now.sh/redeem', {
                   productId: productId
                 });
 
@@ -176,7 +176,7 @@ axios__WEBPACK_IMPORTED_MODULE_2___default.a.defaults.headers.common["Accept"] =
               case 0:
                 _context5.prev = 0;
                 _context5.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("https://aerolab-challenge.now.sh/products");
+                return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://aerolab-challenge.now.sh/products');
 
               case 3:
                 return _context5.abrupt("return", _context5.sent);
@@ -20376,7 +20376,8 @@ var GlobalState = function GlobalState(_ref) {
   var children = _ref.children;
 
   var _useReducer = Object(react__WEBPACK_IMPORTED_MODULE_1__["useReducer"])(_product_reducers__WEBPACK_IMPORTED_MODULE_3__["ProductReducers"], {
-    products: []
+    products: [],
+    pageNumber: 0
   }),
       _useReducer2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useReducer, 2),
       productState = _useReducer2[0],
@@ -20388,6 +20389,29 @@ var GlobalState = function GlobalState(_ref) {
       _useReducer4 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useReducer3, 2),
       userState = _useReducer4[0],
       userDispatch = _useReducer4[1];
+
+  var getProductsPage = function getProductsPage() {
+    return productState.products.slice(productState.pageNumber * 16, (productState.pageNumber + 1) * 16); // The below code generates an array of arrays of 16 elements but I decided not to use it
+    //
+    // let productsPaginated = []
+    // let pageNumber = 0
+    //
+    // while (pageNumber < productState.products.length / pageSize) {
+    //   productsPaginated.push(
+    //     productState.products.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize)
+    //   )
+    //   pageNumber++
+    // }
+    //
+    // return productsPaginated
+  };
+
+  var setPageNumber = function setPageNumber(pageNumber) {
+    productDispatch({
+      type: _product_reducers__WEBPACK_IMPORTED_MODULE_3__["PAGE_NUMBER_SET"],
+      pageNumber: pageNumber
+    });
+  };
 
   var updateProductList = function updateProductList(products) {
     productDispatch({
@@ -20401,7 +20425,7 @@ var GlobalState = function GlobalState(_ref) {
       type: _user_reducers__WEBPACK_IMPORTED_MODULE_5__["USER_UPDATE"],
       userData: userData
     });
-  }; // Las pretendia usar pero tuve un problema con useReducer 
+  }; // Las pretendia usar pero tuve un problema con useReducer
   // y el hecho de que no se por que razon no se puede ejecutar async-await
   // en el body de su ejecucion. Si hay dudas de lo que intente hacer, por favor
   // comunicarse conmigo. Encantado de explicar como lo encare
@@ -20416,11 +20440,13 @@ var GlobalState = function GlobalState(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_product_context__WEBPACK_IMPORTED_MODULE_2__["default"].Provider, {
     value: {
       productState: productState,
-      updateProductList: updateProductList
+      updateProductList: updateProductList,
+      getProductsPage: getProductsPage,
+      setPageNumber: setPageNumber
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 67
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_user_context__WEBPACK_IMPORTED_MODULE_4__["default"].Provider, {
@@ -20432,7 +20458,7 @@ var GlobalState = function GlobalState(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 74
     },
     __self: this
   }, children));
@@ -20457,7 +20483,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({
   products: [],
-  updateProductList: function updateProductList() {}
+  pagesTotal: 0,
+  updateProductList: function updateProductList() {},
+  setPageNumber: function setPageNumber() {}
 }));
 
 /***/ }),
@@ -20466,21 +20494,28 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************!*\
   !*** ./state/product/reducers.js ***!
   \***********************************/
-/*! exports provided: PRODUCTS_UPDATE, ProductReducers */
+/*! exports provided: PRODUCTS_UPDATE, PAGE_NUMBER_SET, ProductReducers */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PRODUCTS_UPDATE", function() { return PRODUCTS_UPDATE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PAGE_NUMBER_SET", function() { return PAGE_NUMBER_SET; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductReducers", function() { return ProductReducers; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
 
-var PRODUCTS_UPDATE = "PRODUCTS_UPDATE";
+var PRODUCTS_UPDATE = 'PRODUCTS_UPDATE';
+var PAGE_NUMBER_SET = 'PAGE_NUMBER_SET';
 var ProductReducers = function ProductReducers(state, action) {
   switch (action.type) {
     case PRODUCTS_UPDATE:
       return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
         products: action.products
+      });
+
+    case PAGE_NUMBER_SET:
+      return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, state, {
+        pageNumber: action.pageNumber
       });
 
     default:
@@ -20504,7 +20539,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = (react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({
   data: {},
-  updateUserData: function updateUserData() {}
+  updateUserData: function updateUserData() {},
+  addPoints: function addPoints() {},
+  reedemProduct: function reedemProduct() {}
 }));
 
 /***/ }),
@@ -20531,9 +20568,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var PRODUCT_REDEEM = "PRODUCT_REDEEM";
-var USER_UPDATE = "USER_UPDATE";
-var POINTS_ADD = "POINTS_ADD";
+var PRODUCT_REDEEM = 'PRODUCT_REDEEM';
+var USER_UPDATE = 'USER_UPDATE';
+var POINTS_ADD = 'POINTS_ADD';
 
 var redeemProduct =
 /*#__PURE__*/

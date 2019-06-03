@@ -1,38 +1,49 @@
-import { useContext, useEffect } from "react";
-import styled from "@emotion/styled";
-import api from "../api";
+import { useContext, useEffect } from 'react'
+import styled from '@emotion/styled'
+import api from '../api'
 
 // Components
-import MainLayout from "../layouts/MainLayout";
-import RedeemButton from "../components/_shared/RedeemButton";
+import MainLayout from '../layouts/MainLayout'
+import RedeemButton from '../components/_shared/RedeemButton'
 
 // State
-import ProductContext from "../state/product/context";
+import ProductContext from '../state/product/context'
 
 const DetailsPage = ({ products, product }) => {
-  const productContext = useContext(ProductContext);
+  const productContext = useContext(ProductContext)
 
   useEffect(() => {
-    productContext.updateProductList(products);
-  }, []);
+    productContext.updateProductList(products)
+  }, [])
 
   return (
     <MainLayout>
-      <ImgContainer>
-        <img src={product.img.hdUrl} />
-      </ImgContainer>
-      <SpecContainer>
-        <h2>{product.name}</h2>
-        <h3>{product.category}</h3>
-        <h4>{`Cost: ${product.cost}`}</h4>
-        <RedeemButton product={product} />
-      </SpecContainer>
+      <Container>
+        <ImgContainer>
+          <img src={product.img.hdUrl} />
+        </ImgContainer>
+        <SpecContainer>
+          <div>
+            <h2>{product.name}</h2>
+            <h3>{product.category}</h3>
+          </div>
+          <RedeemButton product={product}>${product.cost}</RedeemButton>
+        </SpecContainer>
+      </Container>
     </MainLayout>
-  );
-};
+  )
+}
+
+const Container = styled.div`
+  grid-column: 2 / -2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+`
 
 const ImgContainer = styled.div`
-  grid-column: 1 / 3;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -40,46 +51,40 @@ const ImgContainer = styled.div`
 
   img {
     object-fit: cover;
-    border: 4px solid #002c54;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
   }
-`;
+`
 
 const SpecContainer = styled.div`
-  grid-column: 3 / 4;
   display: flex;
+  height: 100%;
+  padding: 1.5rem;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-between;
 
-  h2,
+  h2 {
+    color: #616161;
+    margin: 0;
+  }
+
   h3 {
-    color: #d70026;
+    margin-top: 0;
+    color: #a3a3a3;
   }
+`
 
-  h4 {
-    color: #002c54;
-  }
-
-  :last-child {
-    color: #ffec5c;
-  }
-
-  * {
-    margin: 2vh 0;
-  }
-`;
-
-DetailsPage.getInitialProps = async router => {
-  let products = [];
-  let product = {};
+DetailsPage.getInitialProps = async (router) => {
+  let products = []
+  let product = {}
   try {
-    const productsRes = await api.product.getAllProducts();
-    products = productsRes.data;
-    product = products.find(x => x._id === router.query.id);
+    const productsRes = await api.product.getAllProducts()
+    products = productsRes.data
+    product = products.find((x) => x._id === router.query.id)
   } catch (err) {
-    console.error(err);
+    console.error(err)
   }
-  return { products, product };
-};
+  return { products, product }
+}
 
-export default DetailsPage;
+export default DetailsPage
