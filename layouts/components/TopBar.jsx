@@ -50,6 +50,13 @@ const TopBar = ({ userData }) => {
 
 const ButtonClassicReloaded = styled(ButtonClassic)`
   width: 7rem;
+
+  @media (max-width: 430px) {
+    width: 92vw;
+    padding: 0;
+    margin-right: 0 !important;
+    margin-bottom: 4px;
+  }
   font-size: 1.25rem;
   height: 3rem;
   border-radius: 20.5px;
@@ -80,6 +87,10 @@ const ButtonsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
+  @media (max-width: 430px) {
+    flex-direction: column;
+  }
 `
 
 const LeftContainer = styled.div`
@@ -92,7 +103,7 @@ const LeftContainer = styled.div`
     margin-right: 1.5rem;
   }
 
-  @media (max-width: 510px) {
+  @media (max-width: 600px) {
     flex-direction: column;
     align-items: stretch;
     justify-content: center;

@@ -320,7 +320,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/components/_shared/RedeemButton.jsx";
+var _jsxFileName = "/home/niconiahi/Documents/challenge-aerolab/components/_shared/RedeemButton.jsx";
 
 
 function _templateObject() {
@@ -428,7 +428,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/styled */ "@emotion/styled");
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__);
 
-var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/components/index/FiltersBar.jsx";
+var _jsxFileName = "/home/niconiahi/Documents/challenge-aerolab/components/index/FiltersBar.jsx";
 
 
 function _templateObject6() {
@@ -621,7 +621,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_RedeemButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../_shared/RedeemButton */ "./components/_shared/RedeemButton.jsx");
 /* harmony import */ var _layouts_components_TopBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../layouts/components/TopBar */ "./layouts/components/TopBar.jsx");
 
-var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/components/index/Product.jsx";
+var _jsxFileName = "/home/niconiahi/Documents/challenge-aerolab/components/index/Product.jsx";
 
 
 function _templateObject9() {
@@ -892,7 +892,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _state_user_context__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../state/user/context */ "./state/user/context.js");
 /* harmony import */ var _components_NavigationBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/NavigationBar */ "./layouts/components/NavigationBar.jsx");
 
-var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/layouts/MainLayout.jsx";
+var _jsxFileName = "/home/niconiahi/Documents/challenge-aerolab/layouts/MainLayout.jsx";
 
 
 function _templateObject2() {
@@ -988,7 +988,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_Face__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/Face */ "@material-ui/icons/Face");
 /* harmony import */ var _material_ui_icons_Face__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Face__WEBPACK_IMPORTED_MODULE_4__);
 
-var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/layouts/components/Banner.jsx";
+var _jsxFileName = "/home/niconiahi/Documents/challenge-aerolab/layouts/components/Banner.jsx";
 
 
 function _templateObject2() {
@@ -1056,7 +1056,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _state_product_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../state/product/context */ "./state/product/context.js");
 
-var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/layouts/components/NavigationBar.jsx";
+var _jsxFileName = "/home/niconiahi/Documents/challenge-aerolab/layouts/components/NavigationBar.jsx";
 
 
 function _templateObject3() {
@@ -1191,7 +1191,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/layouts/components/TopBar.jsx";
+var _jsxFileName = "/home/niconiahi/Documents/challenge-aerolab/layouts/components/TopBar.jsx";
 
 function _templateObject6() {
   var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  color: #616161;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 7rem;\n  font-size: 1.5rem;\n  height: 3rem;\n  border-radius: 20.5px;\n  background-color: #ededed;\n\n  span {\n    margin-right: 0.375rem;\n  }\n\n  div {\n    width: 24px;\n    height: 24px;\n    background-image: radial-gradient(circle at 50% 50%, #ffcf00, #f7ae15);\n    border-radius: 50%;\n  }\n"]);
@@ -1214,7 +1214,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n\n  button,\n  label {\n    margin-right: 1.5rem;\n  }\n\n  @media (max-width: 510px) {\n    flex-direction: column;\n    align-items: stretch;\n    justify-content: center;\n\n    label {\n      margin-bottom: 1.5rem;\n      align-self: center;\n    }\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n\n  button,\n  label {\n    margin-right: 1.5rem;\n  }\n\n  @media (max-width: 600px) {\n    flex-direction: column;\n    align-items: stretch;\n    justify-content: center;\n\n    label {\n      margin-bottom: 1.5rem;\n      align-self: center;\n    }\n  }\n"]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -1224,7 +1224,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n\n  @media (max-width: 430px) {\n    flex-direction: column;\n  }\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -1244,7 +1244,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 7rem;\n  font-size: 1.25rem;\n  height: 3rem;\n  border-radius: 20.5px;\n  border-bottom: 1px solid #d3d3d3;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 7rem;\n\n  @media (max-width: 430px) {\n    width: 92vw;\n    padding: 0;\n    margin-right: 0 !important;\n    margin-bottom: 4px;\n  }\n  font-size: 1.25rem;\n  height: 3rem;\n  border-radius: 20.5px;\n  border-bottom: 1px solid #d3d3d3;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -2223,7 +2223,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/niconiahi/Documents/hooky-withdraw/pages/index.jsx";
+var _jsxFileName = "/home/niconiahi/Documents/challenge-aerolab/pages/index.jsx";
 
 
 function _templateObject2() {
@@ -2464,7 +2464,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/niconiahi/Documents/hooky-withdraw/pages/index.jsx */"./pages/index.jsx");
+module.exports = __webpack_require__(/*! /home/niconiahi/Documents/challenge-aerolab/pages/index.jsx */"./pages/index.jsx");
 
 
 /***/ }),
