@@ -54,7 +54,6 @@ const ButtonClassicReloaded = styled(ButtonClassic)`
   @media (max-width: 430px) {
     width: 92vw;
     padding: 0;
-    margin-right: 0 !important;
     margin-bottom: 4px;
   }
   font-size: 1.25rem;
@@ -95,7 +94,7 @@ const ButtonsContainer = styled.div`
 
 const LeftContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: center2
   justify-content: flex-start;
 
   button,
@@ -111,6 +110,12 @@ const LeftContainer = styled.div`
     label {
       margin-bottom: 1.5rem;
       align-self: center;
+    }
+  }
+
+  @media (max-width: 430px) {
+    button {
+      margin-right: 0;
     }
   }
 `
